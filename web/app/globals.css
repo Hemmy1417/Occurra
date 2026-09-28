@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/*
+ * Occurra: an underwriter's ledger. A white page ruled with black hairlines,
+ * obsidian type, one icy tint that lives only in the hero, and flat 4px
+ * corners everywhere. Headlines are whisper-weight (Almarai 300) with tight
+ * tracking; labels and every functional word are set in a mono. No shadows,
+ * no gradients, no saturated colour: an outcome is told by its glyph and its
+ * words, never by a hue.
+ */
+@theme {
+  --color-canvas: #ffffff;
+  --color-ink: #000000;
+  --color-obsidian: #1a1a1a;
+  --color-graphite: #323232;
+  --color-smoke: #5f5f5f;
+  --color-ash: #707070;
+  --color-fog: #8d8d8d;
+  --color-mist: #979595;
+  --color-haze: #f3f5f8;
+  --color-glacier: #d3dfeb;
+  --color-glacier-deep: #4f6f8f;
+
+  --font-display: var(--font-almarai), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-host), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-fragment), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-sm: 4px;
+}
+
+html {
+  background: var(--color-canvas);
+  color: var(--color-obsidian);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--color-canvas);
+}
+
+::selection {
+  background: var(--color-glacier);
+  color: var(--color-obsidian);
+}
+
+/* the page column: 1200px, generous left margin, 16px gutters on a phone */
+.page {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+@media (min-width: 768px) {
+  .page { padding-inline: 40px; }
+}
+
+/* type scale */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+@media (min-width: 768px) {
+  .t-display { font-size: 52px; letter-spacing: -1.04px; line-height: 1.12; }
+}
+.t-heading {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.48px;
+}
+.t-sub {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+}
+.t-body { font-size: 16px; line-height: 1.5; }
+.t-small { font-size: 14px; line-height: 1.45; }
+.t-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.35;
+}
+.measure { max-width: 440px; }
+.measure-wide { max-width: 640px; }
+
+/* a hairline rule under every section title, the width of the column */
+.ruled { border-bottom: 1px solid var(--color-ink); }
+.hair { border: 1px solid var(--color-ink); border-radius: 4px; }
+.hair-soft { border: 1px solid #d9d9d9; border-radius: 4px; }
+
+/* the hero: one photograph, washed with the glacier tint */
+.hero-photo {
+  background-color: var(--color-glacier);
+  background-image: linear-gradient(rgba(211, 223, 235, 0.55), rgba(211, 223, 235, 0.55)), url("/hero.jpg");
+  background-size: cover;
+  background-position: center 40%;
+}
+
+/* inputs: flat, hairline, 4px */
+.field {
+  width: 100%;
+  border: 1px solid var(--color-graphite);
+  border-radius: 4px;
+  background: var(--color-canvas);
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--color-obsidian);
+}
+.field:focus {
+  outline: 2px solid var(--color-glacier-deep);
+  outline-offset: 1px;
+}
+textarea.field { min-height: 110px; line-height: 1.5; resize: vertical; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-glacier-deep);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in { animation: fade 240ms ease-out both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
