@@ -4,6 +4,8 @@
 
 **Did it happen? The evidence decides, and no single party reads it.**
 
+Live at [occurra.vercel.app](https://occurra.vercel.app), on GenLayer Studio Next.
+
 A sponsor, such as an insurer, a logistics desk or a fund, writes down one kind of event: its definition, the
 criteria the evidence must establish, and the evidence a claim must carry. A claimant says the event happened and
 files photographs and documents, stored and hashed on chain. Independent GenLayer validators each examine the
@@ -96,6 +98,7 @@ recorded), or `FINAL`. See [docs/design.md](docs/design.md).
 
 | | |
 |---|---|
+| App | [occurra.vercel.app](https://occurra.vercel.app), reading and writing the deployment of record |
 | Network | GenLayer Studio Next, chain 61997, `https://studio-next.genlayer.com/api` |
 | Contract (deployment of record) | [`0x0F35F98559284e3fFbCe91ad522A58CeE634444E`](https://explorer-studio-dev.genlayer.com/address/0x0F35F98559284e3fFbCe91ad522A58CeE634444E) |
 | Source | [`contracts/occurra.py`](contracts/occurra.py), sha256 `5628334459789a78df1813634ca5f0c00de2d5952efa868486b1949b4897c779`, byte-for-byte identical to the deployed code (`node scripts/deploy.mjs verify`) |
