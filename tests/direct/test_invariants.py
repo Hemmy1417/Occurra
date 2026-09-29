@@ -142,7 +142,8 @@ def _act(w, rng):
     k = json.loads(c.get_claim(cid))
     state = k["state"]
     views = [e.get("view") for e in k["evidence"] if e["kind"] == "IMAGE"]
-    if state in ("OPEN", "UNDER_APPEAL") and roll in (7, 8, 9):
+    missing = state == "OPEN" and ("SCENE" not in views or "DAMAGE_DETAIL" not in views)
+    if state in ("OPEN", "UNDER_APPEAL") and (roll in (7, 8, 9) or (missing and roll in (12, 13, 14, 15))):
         who = k["claimant"]
         if state == "UNDER_APPEAL" and k["appeal"]["by"] == "SPONSOR" and rng.randrange(2):
             who = k["sponsor"]
@@ -150,7 +151,8 @@ def _act(w, rng):
             as_(m, k["assessor"])
             c.submit_document(cid, json.dumps({"doc_type": "ASSESSOR_REPORT"}), f"Seen {rng.random()}")
             return
-        view = "SCENE" if "SCENE" not in views else rng.choice(("DAMAGE_DETAIL", "BEFORE", "SCENE"))
+        view = ("SCENE" if "SCENE" not in views else "DAMAGE_DETAIL" if "DAMAGE_DETAIL" not in views
+                else rng.choice(("DAMAGE_DETAIL", "BEFORE", "SCENE")))
         as_(m, who)
         c.submit_image(cid, json.dumps({"view": view}), jfif(f"{view}{rng.random()}".encode()))
         return
@@ -179,7 +181,7 @@ def _act(w, rng):
         return
     if state == "DETERMINED":
         d = json.loads(c.get_determination(k["determination_id"]))
-        if rng.randrange(2):
+        if rng.randrange(3) == 0:
             as_(m, k["sponsor"] if d["determination"] == "ESTABLISHED" else k["claimant"])
             c.open_appeal(cid, "These are the grounds of appeal.")
         else:

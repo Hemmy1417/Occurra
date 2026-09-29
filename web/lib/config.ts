@@ -4,14 +4,14 @@
  * environment override points a checkout at another deployment, and the app
  * says so on every page it renders.
  */
-export const RECORD_ADDRESS = "0xceCD0B81fBd1BF4e969C908D1452B26D17066E22";
+export const RECORD_ADDRESS = "0x0F35F98559284e3fFbCe91ad522A58CeE634444E";
 
 /**
  * The exits and the long appeal paths ran on a second deployment of the same
  * bytes, so a network stall in that run could never block the deployment the
  * app writes to.
  */
-export const PATHS_ADDRESS = "0x5065765380a0851C26fC30203246A58d25B9e1E5";
+export const PATHS_ADDRESS = "0x7cE30a4A45D2dC34a07DDb13BB51f068D99FAf06";
 
 const override = process.env.NEXT_PUBLIC_OCCURRA_CONTRACT?.trim() ?? "";
 
@@ -21,7 +21,7 @@ export const IS_RECORD = CONTRACT_ADDRESS.toLowerCase() === RECORD_ADDRESS.toLow
 
 /** The sha256 of the contract source these bytes were compiled from. */
 export const SOURCE_SHA256 =
-  "73632543ef19a41d729c8f1dcef6a4dc8ca766f26e54f714fdd60d53b1c17792";
+  "5628334459789a78df1813634ca5f0c00de2d5952efa868486b1949b4897c779";
 
 export const REPO_URL = "https://github.com/Hemmy1417/Occurra";
 export const SOURCE_URL = `${REPO_URL}/blob/main/contracts/occurra.py`;

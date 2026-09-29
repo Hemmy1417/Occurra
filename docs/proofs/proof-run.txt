@@ -1,169 +1,278 @@
-[15:07:36] proofs on 0xceCD0B81fBd1BF4e969C908D1452B26D17066E22
-[15:07:40] types.water: SPONSOR create_event_type 0xa02adca2b75aa9ae4bd762217a4a5e8006f42eddc561131c974296f0ef21b7e6
-[15:08:12] types.water: FINALIZED MAJORITY_AGREE leader=SUCCESS in 32 s
-[15:08:15] types.collision: SPONSOR create_event_type 0x380692cf6be497e9069279cf7df1168b5268c94c60bbcebe94f097760bd42580
-[15:08:53] types.collision: FINALIZED MAJORITY_AGREE leader=SUCCESS in 38 s
-[15:08:56] enforced.wrong_bond: CLAIMANT file_claim 0xe8d6f4ff3ab28dec4dfadcd1b42ad815f043e0ed79a45f60b20fabf7f9d60668
-[15:09:32] enforced.wrong_bond: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
-[15:09:38] enforced.sponsor_claims: SPONSOR file_claim 0x0200c9468109fa72d8aa282e49d9840760be6fc2ee1c95d4918c6e94842311d9
-[15:10:21] enforced.sponsor_claims: FINALIZED MAJORITY_AGREE leader=SUCCESS in 43 s
-[15:10:23] water.file: CLAIMANT file_claim 0x470cfa402ee832bdb57ac0facb3c2171edc91fcf053cf25b3211d3c7c546c944
-[15:11:05] water.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 42 s
-[15:11:08] water.scene: CLAIMANT submit_image 0xd3ea8d79d20039a18821e9bab4d77c021e5b90e614be61830808038f6a8a6809
-[15:14:51] water.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 223 s
-[15:14:58] enforced.preflight: CLAIMANT request_assessment 0xfb975058ddd380209fec25745407a84634b92376ce62aef582b7bb46ebe7779d
-[15:15:36] enforced.preflight: FINALIZED MAJORITY_AGREE leader=ERROR in 37 s
-[15:15:39] water.detail: CLAIMANT submit_image 0xc92c8597172436cf6e5f861e9eede86e680c0cd83ff4a07acb65be477032de9f
-[15:16:18] water.detail: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
-[15:16:21] water.estimate: CLAIMANT submit_document 0x07d861f3e81a2b12cf7d90b1186f6600a1f25d2076ae340301b150eca55ddaae
-[15:16:59] water.estimate: FINALIZED MAJORITY_AGREE leader=SUCCESS in 39 s
-[15:17:06] water.assess: CLAIMANT request_assessment 0x8c0387af32a617c229575104b4694004f67d846cb42050e2e73e56d3af86a4ec
-  … water.assess COMMITTING
+# Proof run on the deployment of record, 0x0F35F98559284e3fFbCe91ad522A58CeE634444E
+# Part 1 stopped on the wreck assertion (see docs/proofs/README.md); the assertion was relaxed to the
+# protocol's guarantee and the run resumed, skipping every step already on chain.
+
+[17:39:48] proofs on 0x0F35F98559284e3fFbCe91ad522A58CeE634444E
+[17:39:52] types.water: SPONSOR create_event_type 0xdf16f80e213471b81c806b1e13151099c00d56b93a0241b82526b829073a9f63
+[17:40:31] types.water: FINALIZED MAJORITY_AGREE leader=SUCCESS in 39 s
+[17:40:33] types.collision: SPONSOR create_event_type 0xd481e4eba6e38adcb0a073975fd4bf886b9d0e9962b72acb41c6fa8237f408b5
+[17:41:20] types.collision: FINALIZED MAJORITY_AGREE leader=SUCCESS in 47 s
+[17:41:23] enforced.wrong_bond: CLAIMANT file_claim 0xc7a489cc4e39279e36d93413cbd18e493468348a42bf0399569c1f6a0a5b1270
+[17:41:59] enforced.wrong_bond: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
+[17:42:04] enforced.sponsor_claims: SPONSOR file_claim 0x6240527ca45d136bee949a96cc56d347bdccb6935a7e5e55bd90d561a538864a
+[17:42:38] enforced.sponsor_claims: FINALIZED MAJORITY_AGREE leader=SUCCESS in 34 s
+[17:42:40] water.file: CLAIMANT file_claim 0xef73e8b6e9ed720061612738c2ebee865fbc5cbf0c35c6eae259657b9fba0538
+[17:43:20] water.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[17:43:24] water.scene: CLAIMANT submit_image 0xf60233cc319a240dadd96871f3facfb81742faa5e7461fd249d889795fb95204
+[17:44:08] water.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 44 s
+[17:44:14] enforced.preflight: CLAIMANT request_assessment 0x032129765189c42e7ba1da7e8fd6042e802dcba1ffde345ff81800946176f4ea
+[17:44:53] enforced.preflight: FINALIZED MAJORITY_AGREE leader=ERROR in 39 s
+[17:44:56] water.detail: CLAIMANT submit_image 0x2ae00e25f994fcb1eb922b6cba38b1654343e86256df62924dbfaf65018674d1
+[17:45:31] water.detail: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[17:45:33] water.estimate: CLAIMANT submit_document 0x434f2a203bba661849e8f6fdc3218f1f2dacf80ebae05bff5296e76604e3f931
+[17:46:11] water.estimate: FINALIZED MAJORITY_AGREE leader=SUCCESS in 38 s
+[17:46:17] water.assess: CLAIMANT request_assessment 0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370
+  … water.assess PROPOSING
   … water.assess ACCEPTED
-[15:19:09] water.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 123 s
-receipt 0x8c0387af32a617c229575104b4694004f67d846cb42050e2e73e56d3af86a4ec status=FINALIZED result=MAJORITY_AGREE rotations=1
- rotation 1: Accepted
-  leader/leader vote=? model=policy:dev-sonnet exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000001", "ev-000002"], "determination": "ESTABLISHED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "SATISFIED"}}
-  leader/validator vote=agree model=policy:dev-sonnet exec=SUCCESS
-  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
-  validator/validator vote=idle model=policy:dev-grok exec=ERROR
-  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+[17:48:28] water.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 131 s
+receipt 0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370 status=FINALIZED result=MAJORITY_AGREE rotations=2
+ rotation 1: Leader Rotation
+  leader/leader vote=? model=policy:dev-grok exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000001", "ev-000002"], "determination": "UNDETERMINED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_ESTABLISHED"}}
+  leader/validator vote=agree model=policy:dev-grok exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-sonnet exec=ERROR
   validator/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
      [DISSENT] this validator could not see any photograph of the scene
-[15:19:11] water.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"SATISFIED"} sufficient=true conflicts=false
-[15:19:16] enforced.claimant_appeals_own_win: CLAIMANT open_appeal 0xabe011693cd73f7d54dbbc9d700628f7f718d80e82400265ecfaf4e3640f7678
-[15:19:54] enforced.claimant_appeals_own_win: FINALIZED MAJORITY_AGREE leader=ERROR in 38 s
-[15:19:59] enforced.finalize_early: STRANGER finalize 0x946899a7141f0884c83950357a18edd48e0d69832fce98a85c9ba9e1bdd4ed41
-[15:20:42] enforced.finalize_early: FINALIZED MAJORITY_AGREE leader=ERROR in 43 s
-[15:20:44] contradicted.file: CLAIMANT2 file_claim 0x803636e55af350c1cf8b6c674ef2d34f4456fc0212ce11f4927184d7a1ed2ab6
-[15:21:25] contradicted.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 41 s
-[15:21:30] contradicted.scene: CLAIMANT2 submit_image 0xae7698bc4e7ca4accf4f44e2866c87e0aec0cc70d787043863eed677aa3eec26
-[15:22:09] contradicted.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 39 s
-[15:22:13] contradicted.detail: CLAIMANT2 submit_image 0x9f57885700159ce3a58ea0f088fdec6d677b5618cb7e6d010cf04a7bdba11ee3
-[15:22:54] contradicted.detail: FINALIZED MAJORITY_AGREE leader=SUCCESS in 41 s
-[15:22:56] contradicted.report: CLAIMANT2 submit_document 0xb1236b1d4b795077f45df0517875fd6b8a3e58df650ea6d66ca9050037d75121
-[15:23:36] contradicted.report: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
-[15:23:38] contradicted.assess: CLAIMANT2 request_assessment 0xb99e75e9bd164f46824d60eb819441142b68482491e17fba1c0b894167172d5b
-  … contradicted.assess ACCEPTED
-[15:25:01] contradicted.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 83 s
-receipt 0xb99e75e9bd164f46824d60eb819441142b68482491e17fba1c0b894167172d5b status=FINALIZED result=MAJORITY_AGREE rotations=1
- rotation 1: Accepted
-  leader/leader vote=? model=google/gemini-3-flash-preview exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000004", "ev-000005"], "determination": "UNDETERMINED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_SATISFIED"}}
-  leader/validator vote=agree model=google/gemini-3-flash-preview exec=SUCCESS
-  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
-  validator/validator vote=idle model=policy:dev-gpt-5-4 exec=ERROR
+  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
+     [DISSENT] the leader withholds a finding this node would make mine={"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "SATISFIED"}
+  validator/validator vote=disagree model=openai/gpt-5.4 exec=SUCCESS
+     [DISSENT] the leader withholds a finding this node would make mine={"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "SATISFIED"}
+ rotation 2: Accepted
+  leader/leader vote=? model=policy:dev-gpt-5-4 exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000001", "ev-000002"], "determination": "ESTABLISHED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "SATISFIED"}}
+  leader/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-sonnet exec=ERROR
   validator/validator vote=agree model=policy:dev-sonnet exec=SUCCESS
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-gpt-oss exec=ERROR
+[17:48:29] water.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"SATISFIED"} sufficient=true conflicts=false
+[17:48:34] enforced.claimant_appeals_own_win: CLAIMANT open_appeal 0x8fc28ec157edc780b201472282365e9deab4208357d5cc6c84ce44ab79a34bf8
+[17:49:10] enforced.claimant_appeals_own_win: FINALIZED MAJORITY_AGREE leader=ERROR in 36 s
+[17:49:14] enforced.finalize_early: STRANGER finalize 0x9e15b4f748f889bf684f1afa64ffd52392fe3ac1111374a8f56944bf76358287
+[17:49:48] enforced.finalize_early: FINALIZED MAJORITY_AGREE leader=ERROR in 34 s
+[17:49:50] contradicted.file: CLAIMANT2 file_claim 0x31161013bc5e4b2a0d94174a1c4382a1f5d19cf08fda5e1a5008867d86455290
+[17:50:27] contradicted.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
+[17:50:33] contradicted.scene: CLAIMANT2 submit_image 0x807fa34e3aba32036eca9ea663fef1d50eb0da95d65824f186178df1b79fb05e
+[17:51:10] contradicted.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
+[17:51:14] contradicted.detail: CLAIMANT2 submit_image 0xd3bc68aa2f3d3f8adcd83018e269e8cba6e0f57950cf7de2ee417a247acab159
+[17:51:54] contradicted.detail: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[17:51:56] contradicted.report: CLAIMANT2 submit_document 0x46b111ce460c7367281d1c74d9882b1b0cdd20d65d3bb7e899be09e484db5fa6
+[17:52:33] contradicted.report: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
+[17:52:35] contradicted.assess: CLAIMANT2 request_assessment 0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b
+  … contradicted.assess ACCEPTED
+[17:53:50] contradicted.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 75 s
+receipt 0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b status=FINALIZED result=MAJORITY_AGREE rotations=1
+ rotation 1: Accepted
+  leader/leader vote=? model=policy:dev-gpt-5-4 exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000004", "ev-000005"], "determination": "UNDETERMINED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_SATISFIED"}}
+  leader/validator vote=idle model=policy:dev-gpt-5-4 exec=ERROR
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-gemini exec=ERROR
+  validator/validator vote=agree model=policy:dev-sonnet exec=SUCCESS
+  validator/validator vote=agree model=google/gemini-3-flash-preview exec=SUCCESS
+[17:53:52] contradicted.assess: UNDETERMINED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_SATISFIED"} sufficient=true conflicts=true
+[17:53:54] wrongcar.file: CLAIMANT file_claim 0x24fc783f635607eb6aba7b8fbd43d643c19818e794b14184df2f5446572bda3d
+[17:54:29] wrongcar.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[17:54:33] wrongcar.scene: CLAIMANT submit_image 0x2ef8bad76df21b9a1b71b2e7f391762c34e6fc69153039a186c2b8c5ef4f63be
+[17:55:08] wrongcar.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[17:55:11] wrongcar.assess: CLAIMANT request_assessment 0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7
+  … wrongcar.assess ACCEPTED
+[17:56:36] wrongcar.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 85 s
+receipt 0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7 status=FINALIZED result=MAJORITY_AGREE rotations=2
+ rotation 1: Leader Rotation
+  leader/leader vote=? model=policy:dev-sonnet exec=SUCCESS
+     [ASSESS] leader {"seen": [], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_ESTABLISHED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=idle model=policy:dev-sonnet exec=ERROR
+  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-gpt-oss exec=ERROR
+  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=disagree model=policy:dev-mistral exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+ rotation 2: Accepted
+  leader/leader vote=? model=policy:dev-gpt-5-4 exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000007"], "determination": "NOT_ESTABLISHED", "ratings": {"C1": "NOT_SATISFIED", "C2": "NOT_SATISFIED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
+     [DISSENT] this validator could not see any photograph of the scene
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
   validator/validator vote=disagree model=policy:dev-mistral exec=SUCCESS
      [DISSENT] this validator could not see any photograph of the scene
-[15:25:03] contradicted.assess: UNDETERMINED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_SATISFIED"} sufficient=true conflicts=true
-[15:25:05] wrongcar.file: CLAIMANT file_claim 0x26cbc2e8b2d3265ae3d5d795b2195326b5adeff95825d058ed3a435e5744b8ea
-[15:25:41] wrongcar.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
-[15:25:46] wrongcar.scene: CLAIMANT submit_image 0x8cdf745e188cc9d82bfc021f5b04e1e12cc96929529895784a4f9144f31a4e89
-[15:26:21] wrongcar.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
-[15:26:23] wrongcar.assess: CLAIMANT request_assessment 0xfad261c475b8c84511862799906598b11ddb228feda03afb9fc5c3772b9e9395
-  … wrongcar.assess ACCEPTED
-[15:27:46] wrongcar.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 83 s
-receipt 0xfad261c475b8c84511862799906598b11ddb228feda03afb9fc5c3772b9e9395 status=FINALIZED result=MAJORITY_AGREE rotations=2
+[17:56:37] wrongcar.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_SATISFIED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
+[17:56:39] wreck.file: CLAIMANT2 file_claim 0x924c23f77829636507a630d0154ea27adca8f0bc0dec79b3580ae7dc32e401b8
+[17:57:14] wreck.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[17:57:18] wreck.scene: CLAIMANT2 submit_image 0x205e6226450ff140b7c884ccebf514cfdd00d91860c0eddb875f1c561a183f08
+[17:58:06] wreck.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 47 s
+[17:58:08] wreck.assess: CLAIMANT2 request_assessment 0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2
+  … wreck.assess COMMITTING
+  … wreck.assess ACCEPTED
+[18:00:23] wreck.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 135 s
+receipt 0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2 status=FINALIZED result=MAJORITY_AGREE rotations=3
  rotation 1: Leader Rotation
+  leader/leader vote=? model=policy:dev-gpt-oss exec=SUCCESS
+     [ASSESS] leader {"seen": [], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_ESTABLISHED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-deepseek exec=ERROR
+  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-gemini exec=ERROR
+  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+ rotation 2: Leader Rotation
+  leader/leader vote=? model=policy:dev-gemini exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000008"], "determination": "NOT_ESTABLISHED", "ratings": {"C1": "NOT_SATISFIED", "C2": "NOT_SATISFIED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=agree model=policy:dev-gemini exec=SUCCESS
+  validator/validator vote=disagree model=policy:dev-deepseek exec=SUCCESS
+     [DISSENT] C1: the leader finds it not satisfied, this node finds it not_established mine={"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_SATISFIED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}
+  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
+     [DISSENT] C2: the leader finds it not satisfied, this node finds it not_established mine={"C1": "NOT_SATISFIED", "C2": "NOT_ESTABLISHED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}
+  validator/validator vote=disagree model=policy:dev-sonnet exec=SUCCESS
+     [DISSENT] this validator could not see any photograph of the scene
+ rotation 3: Accepted
+  leader/leader vote=? model=policy:dev-deepseek exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000008"], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_SATISFIED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=agree model=policy:dev-deepseek exec=SUCCESS
+  validator/validator vote=agree model=policy:dev-gemini exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-deepseek exec=ERROR
+  validator/validator vote=disagree model=policy:dev-sonnet exec=SUCCESS
+     [DISSENT] this validator could not see any photograph of the scene
+  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+[18:00:24] wreck.assess: UNDETERMINED {"C1":"NOT_ESTABLISHED","C2":"NOT_ESTABLISHED","S1":"NOT_SATISFIED","S2":"NOT_ESTABLISHED","S3":"NOT_APPLICABLE"} sufficient=false conflicts=false
+[18:00:24] ASSERTION FAILED: a burnt-out wreck should fail a fresh collision claim, was UNDETERMINED
+
+# ── resumed ──
+
+[18:01:29] proofs on 0x0F35F98559284e3fFbCe91ad522A58CeE634444E
+[18:01:32] types.water: done earlier (0xdf16f80e213471b81c806b1e13151099c00d56b93a0241b82526b829073a9f63)
+[18:01:32] types.collision: done earlier (0xd481e4eba6e38adcb0a073975fd4bf886b9d0e9962b72acb41c6fa8237f408b5)
+[18:01:32] enforced.wrong_bond: done earlier (0xc7a489cc4e39279e36d93413cbd18e493468348a42bf0399569c1f6a0a5b1270)
+[18:01:34] enforced.sponsor_claims: done earlier (0x6240527ca45d136bee949a96cc56d347bdccb6935a7e5e55bd90d561a538864a)
+[18:01:34] water.file: done earlier (0xef73e8b6e9ed720061612738c2ebee865fbc5cbf0c35c6eae259657b9fba0538)
+[18:01:34] water.scene: done earlier (0xf60233cc319a240dadd96871f3facfb81742faa5e7461fd249d889795fb95204)
+[18:01:36] enforced.preflight: done earlier (0x032129765189c42e7ba1da7e8fd6042e802dcba1ffde345ff81800946176f4ea)
+[18:01:36] water.detail: done earlier (0x2ae00e25f994fcb1eb922b6cba38b1654343e86256df62924dbfaf65018674d1)
+[18:01:36] water.estimate: done earlier (0x434f2a203bba661849e8f6fdc3218f1f2dacf80ebae05bff5296e76604e3f931)
+[18:01:36] water.assess: done earlier (0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370)
+[18:01:37] water.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"SATISFIED"} sufficient=true conflicts=false
+[18:01:37] enforced.claimant_appeals_own_win: done earlier (0x8fc28ec157edc780b201472282365e9deab4208357d5cc6c84ce44ab79a34bf8)
+[18:01:37] enforced.finalize_early: done earlier (0x9e15b4f748f889bf684f1afa64ffd52392fe3ac1111374a8f56944bf76358287)
+[18:01:37] contradicted.file: done earlier (0x31161013bc5e4b2a0d94174a1c4382a1f5d19cf08fda5e1a5008867d86455290)
+[18:01:37] contradicted.scene: done earlier (0x807fa34e3aba32036eca9ea663fef1d50eb0da95d65824f186178df1b79fb05e)
+[18:01:37] contradicted.detail: done earlier (0xd3bc68aa2f3d3f8adcd83018e269e8cba6e0f57950cf7de2ee417a247acab159)
+[18:01:37] contradicted.report: done earlier (0x46b111ce460c7367281d1c74d9882b1b0cdd20d65d3bb7e899be09e484db5fa6)
+[18:01:37] contradicted.assess: done earlier (0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b)
+[18:01:38] contradicted.assess: UNDETERMINED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_SATISFIED"} sufficient=true conflicts=true
+[18:01:38] wrongcar.file: done earlier (0x24fc783f635607eb6aba7b8fbd43d643c19818e794b14184df2f5446572bda3d)
+[18:01:38] wrongcar.scene: done earlier (0x2ef8bad76df21b9a1b71b2e7f391762c34e6fc69153039a186c2b8c5ef4f63be)
+[18:01:38] wrongcar.assess: done earlier (0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7)
+[18:01:38] wrongcar.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_SATISFIED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
+[18:01:38] wreck.file: done earlier (0x924c23f77829636507a630d0154ea27adca8f0bc0dec79b3580ae7dc32e401b8)
+[18:01:38] wreck.scene: done earlier (0x205e6226450ff140b7c884ccebf514cfdd00d91860c0eddb875f1c561a183f08)
+[18:01:38] wreck.assess: done earlier (0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2)
+[18:01:39] wreck.assess: UNDETERMINED {"C1":"NOT_ESTABLISHED","C2":"NOT_ESTABLISHED","S1":"NOT_SATISFIED","S2":"NOT_ESTABLISHED","S3":"NOT_APPLICABLE"} sufficient=false conflicts=false
+[18:01:39] wreck: UNDETERMINED; subject check NOT_SATISFIED, cause check NOT_ESTABLISHED, evidence not enough to decide
+[18:01:41] appeal.file: CLAIMANT file_claim 0x04ad94a7094a1044c70d22b25b51bae4de716065162cf734ca67207121c18c8f
+[18:02:16] appeal.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[18:02:21] appeal.side: CLAIMANT submit_image 0x992314d522af0a8fc68d5807742a8dd911e5d15c8959f7929b0ee24c13372545
+[18:03:04] appeal.side: FINALIZED MAJORITY_AGREE leader=SUCCESS in 42 s
+[18:03:06] appeal.assess: CLAIMANT request_assessment 0x68940e2c5b317b6ba9acd36a9a4421bc3697c805cce56f6c9259fb5e61060627
+  … appeal.assess ACCEPTED
+[18:04:24] appeal.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 78 s
+receipt 0x68940e2c5b317b6ba9acd36a9a4421bc3697c805cce56f6c9259fb5e61060627 status=FINALIZED result=MAJORITY_AGREE rotations=1
+ rotation 1: Accepted
+  leader/leader vote=? model=policy:dev-deepseek exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000009"], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "SATISFIED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=idle model=policy:dev-deepseek exec=ERROR
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
+     [DISSENT] the leader withholds a finding this node would make mine={"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}
+  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=agree model=policy:dev-deepseek exec=SUCCESS
+[18:04:25] appeal.assess: UNDETERMINED {"C1":"NOT_ESTABLISHED","C2":"NOT_ESTABLISHED","S1":"SATISFIED","S2":"NOT_ESTABLISHED","S3":"NOT_APPLICABLE"} sufficient=false conflicts=false
+[18:04:33] appeal.open: CLAIMANT open_appeal 0x19f54b48cf13713265d828dfad81260c86664e0c3d38816a563100ad9086a854
+[18:05:08] appeal.open: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
+[18:05:17] appeal.rear: CLAIMANT submit_image 0x18e5cd14b06a609f1e275a948ff3d984498f732e821e0c461a5aa82bcc659681
+[18:05:52] appeal.rear: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
+[18:05:58] enforced.readjudicate_early: CLAIMANT readjudicate 0x71b3bc43b21dcc1a00ec1e8d9536e1b8bc90edfc3adc0338fa3b4a77e79d9634
+[18:06:34] enforced.readjudicate_early: FINALIZED MAJORITY_AGREE leader=ERROR in 36 s
+[18:06:39] water.finalize: STRANGER finalize 0xcf2c4a9b47fb14c16e6d95df176917b8145061056eeeecf6e41a965c8b58322c
+[18:07:19] water.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[18:07:24] contradicted.finalize: STRANGER finalize 0xa8bba297b5719ee34dacdd763096b69fa01c87030944ebf64a2ee0c7f3d5ea78
+[18:08:04] contradicted.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[18:08:09] wrongcar.finalize: STRANGER finalize 0xe1dde2372ed4361c1f1263f03175b34c24b182a8e7dbd85cfb3da405513eb801
+[18:08:49] wrongcar.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[18:08:53] wreck.finalize: STRANGER finalize 0x759369a5825443cab743a5449e883ad92acdff718280dd2f248bb0135b42eb51
+[18:09:28] wreck.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 35 s
+[18:09:30] waiting for the appeal's evidence period (308 s)
+[18:10:30] waiting for the appeal's evidence period (248 s)
+[18:11:30] waiting for the appeal's evidence period (188 s)
+[18:12:30] waiting for the appeal's evidence period (128 s)
+[18:13:30] waiting for the appeal's evidence period (68 s)
+[18:14:30] waiting for the appeal's evidence period (8 s)
+[18:14:45] appeal.readjudicate: STRANGER readjudicate 0x619079eb6f63dd0af54982df381a9dc0481a941b4ee254983da140d44c8471bc
+  … appeal.readjudicate PROPOSING
+  … appeal.readjudicate COMMITTING
+  … appeal.readjudicate PROPOSING
+[18:18:03] appeal.readjudicate: no majority, so nothing was recorded; asking again (2 of 4)
+[18:18:21] appeal.readjudicate: STRANGER readjudicate 0xcce3174e84819aaeeddbb9524f9bab9716b9e7b96ffe5b1e1ccb456ad7f29456
+  … appeal.readjudicate COMMITTING
+  … appeal.readjudicate COMMITTING
+  … appeal.readjudicate ACCEPTED
+[18:21:05] appeal.readjudicate: FINALIZED MAJORITY_AGREE leader=SUCCESS in 164 s
+receipt 0xcce3174e84819aaeeddbb9524f9bab9716b9e7b96ffe5b1e1ccb456ad7f29456 status=FINALIZED result=MAJORITY_AGREE rotations=4
+ rotation 1: Leader Rotation
+  leader/leader vote=? model=policy:dev-gpt-oss exec=SUCCESS
+     [ASSESS] leader {"seen": [], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_ESTABLISHED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=disagree model=openai/gpt-5.4 exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-gemini exec=ERROR
+  validator/validator vote=disagree model=policy:dev-grok exec=SUCCESS
+     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-mistral exec=ERROR
+ rotation 2: Leader Rotation
+  leader/leader vote=? model=policy:dev-gemini exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000009", "ev-000010"], "determination": "ESTABLISHED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=agree model=policy:dev-gemini exec=SUCCESS
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+  validator/validator vote=disagree model=policy:dev-deepseek exec=SUCCESS
+     [DISSENT] this validator could not see any photograph of the scene
+  validator/validator vote=disagree model=policy:dev-grok exec=SUCCESS
+     [DISSENT] the leader finds it established; this node finds it not established mine={"C1": "NOT_SATISFIED", "C2": "NOT_SATISFIED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}
+  validator/validator vote=disagree model=policy:dev-mistral exec=SUCCESS
+     [DISSENT] this validator could not see any photograph of the scene
+ rotation 3: Leader Rotation
   leader/leader vote=? model=policy:dev-mistral exec=SUCCESS
      [ASSESS] leader {"seen": [], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_ESTABLISHED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
   leader/validator vote=disagree model=policy:dev-mistral exec=SUCCESS
      [DISSENT] the leader could not see any photograph of the scene
-  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
-     [DISSENT] the leader could not see any photograph of the scene
-  validator/validator vote=idle model=policy:dev-gpt-5-4 exec=ERROR
   validator/validator vote=disagree model=openai/gpt-5.4 exec=SUCCESS
      [DISSENT] the leader could not see any photograph of the scene
-  validator/validator vote=idle model=policy:dev-gpt-oss exec=ERROR
- rotation 2: Accepted
-  leader/leader vote=? model=policy:dev-gpt-5-4 exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000007"], "determination": "NOT_ESTABLISHED", "ratings": {"C1": "NOT_SATISFIED", "C2": "NOT_SATISFIED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}}
-  leader/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
-     [DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={"C1": "SATISFIED", "C2": "NOT_SATISFIED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}
-  validator/validator vote=agree model=policy:dev-gemini exec=SUCCESS
-  validator/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
-     [DISSENT] this validator could not see any photograph of the scene
-  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
-  validator/validator vote=agree model=policy:dev-gemini exec=SUCCESS
-[15:27:48] wrongcar.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_SATISFIED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
-[15:27:50] wreck.file: CLAIMANT2 file_claim 0x524d63bef3bd4c8e9f8f2733b489e9695da8a300e67d8529b1413658202674ad
-[15:28:26] wreck.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
-[15:28:31] wreck.scene: CLAIMANT2 submit_image 0x95b4c0e56a710ca8bf6d6d1747b73056a74b34f860c555c41d461f8b4d46c466
-[15:29:11] wreck.scene: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
-[15:29:13] wreck.assess: CLAIMANT2 request_assessment 0xac0d7d18f579d4f5d4a53cd939b4abe7b57dbe3c984942de544816e3c821a4a4
-  … wreck.assess ACCEPTED
-[15:30:33] wreck.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 80 s
-receipt 0xac0d7d18f579d4f5d4a53cd939b4abe7b57dbe3c984942de544816e3c821a4a4 status=FINALIZED result=MAJORITY_AGREE rotations=2
- rotation 1: Leader Rotation
-  leader/leader vote=? model=policy:dev-deepseek exec=SUCCESS
-     [ASSESS] leader {"seen": [], "determination": "UNDETERMINED", "ratings": {"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "NOT_ESTABLISHED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}}
-  leader/validator vote=disagree model=policy:dev-deepseek exec=SUCCESS
-     [DISSENT] the leader could not see any photograph of the scene
+  validator/validator vote=idle model=policy:dev-deepseek exec=ERROR
   validator/validator vote=idle model=policy:dev-grok exec=ERROR
-  validator/validator vote=idle model=anthropic/claude-sonnet-4.6 exec=ERROR
-  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
-     [DISSENT] the leader could not see any photograph of the scene
   validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
      [DISSENT] the leader could not see any photograph of the scene
- rotation 2: Accepted
-  leader/leader vote=? model=policy:dev-gemini exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000008"], "determination": "NOT_ESTABLISHED", "ratings": {"C1": "NOT_SATISFIED", "C2": "NOT_ESTABLISHED", "S1": "NOT_SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}}
-  leader/validator vote=idle model=policy:dev-gemini exec=ERROR
-  validator/validator vote=agree model=anthropic/claude-sonnet-4.6 exec=SUCCESS
-  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
-  validator/validator vote=idle model=policy:dev-sonnet exec=ERROR
-  validator/validator vote=agree model=policy:dev-grok exec=SUCCESS
-[15:30:35] wreck.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_ESTABLISHED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
-[15:30:36] appeal.file: CLAIMANT file_claim 0x70ffe6ed3799740c0a6d30380e501895b2b5d011e4315d4a6719decc5b34ee2e
-[15:31:13] appeal.file: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
-[15:31:18] appeal.side: CLAIMANT submit_image 0xab9758c8397e5ae8108c272661a527c17d1bd6a7a93dbaddf57cb88eb792b65a
-[15:31:56] appeal.side: FINALIZED MAJORITY_AGREE leader=SUCCESS in 38 s
-[15:31:58] appeal.assess: CLAIMANT request_assessment 0xb716e87ca2f615f902e4c06e60c25c53231bbbef174ad86557d098f08acabded
-  … appeal.assess COMMITTING
-  … appeal.assess COMMITTING
-[15:33:46] appeal.assess: no majority, so nothing was recorded; asking again (2 of 4)
-[15:34:04] appeal.assess: CLAIMANT request_assessment 0x03b69e16af174aa78c578bad9717ed5b325c1a1f12e2b9fae84c2c2ade76d6a0
-  … appeal.assess COMMITTING
-  … appeal.assess REVEALING
-[15:36:23] appeal.assess: FINALIZED MAJORITY_AGREE leader=SUCCESS in 139 s
-receipt 0x03b69e16af174aa78c578bad9717ed5b325c1a1f12e2b9fae84c2c2ade76d6a0 status=FINALIZED result=MAJORITY_AGREE rotations=2
- rotation 1: Leader Rotation
-  leader/leader vote=? model=policy:dev-sonnet exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000009"], "determination": "NOT_ESTABLISHED", "ratings": {"C1": "NOT_SATISFIED", "C2": "NOT_ESTABLISHED", "S1": "SATISFIED", "S2": "NOT_SATISFIED", "S3": "NOT_APPLICABLE"}}
-  leader/validator vote=idle model=policy:dev-sonnet exec=ERROR
-  validator/validator vote=disagree model=policy:dev-gemini exec=SUCCESS
-     [DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}
-  validator/validator vote=agree model=policy:dev-deepseek exec=SUCCESS
-  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
-     [DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}
-  validator/validator vote=disagree model=policy:dev-gpt-5-4 exec=SUCCESS
-     [DISSENT] this node finds the evidence insufficient to decide mine={"C1": "NOT_ESTABLISHED", "C2": "NOT_ESTABLISHED", "S1": "SATISFIED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}
- rotation 2: Accepted
-  leader/leader vote=? model=policy:dev-gpt-5-4 exec=SUCCESS
-     [ASSESS] leader {"seen": ["ev-000009"], "determination": "ESTABLISHED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}}
-  leader/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
-  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
-  validator/validator vote=agree model=policy:dev-gemini exec=SUCCESS
+ rotation 4: Accepted
+  leader/leader vote=? model=policy:dev-grok exec=SUCCESS
+     [ASSESS] leader {"seen": ["ev-000009", "ev-000010"], "determination": "ESTABLISHED", "ratings": {"C1": "SATISFIED", "C2": "SATISFIED", "S1": "SATISFIED", "S2": "SATISFIED", "S3": "NOT_APPLICABLE"}}
+  leader/validator vote=agree model=policy:dev-grok exec=SUCCESS
   validator/validator vote=disagree model=policy:dev-deepseek exec=SUCCESS
-     [DISSENT] the leader finds it established; this node finds it undetermined mine={"C1": "NOT_SATISFIED", "C2": "NOT_ESTABLISHED", "S1": "NOT_SATISFIED", "S2": "NOT_ESTABLISHED", "S3": "NOT_APPLICABLE"}
-  validator/validator vote=disagree model=policy:dev-gpt-oss exec=SUCCESS
      [DISSENT] this validator could not see any photograph of the scene
-[15:36:24] appeal.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
-[15:36:24] appeal: the side view was enough to establish it on the first asking, so there is nothing to appeal
-[15:36:30] water.finalize: STRANGER finalize 0x9bfcaff27c4c2b3af965418df84f8b64973074e5ea546b41bd51741ed6f375ef
-[15:37:11] water.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 42 s
-[15:37:17] contradicted.finalize: STRANGER finalize 0xe77a2eff3776def36d6189553b2f5598c6d6e5c4905a4c889e4507c3f25c5b5e
-[15:37:53] contradicted.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
-[15:37:58] wrongcar.finalize: STRANGER finalize 0x05246c7f3c93fc345d0d8f33d9818ee8dc3eaf6dd48c09f8eb1c0ffd55be9ff3
-[15:38:35] wrongcar.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 37 s
-[15:38:37] waiting for wreck's appeal window (41 s)
-[15:39:20] wreck.finalize: STRANGER finalize 0xc83b8f918d1ae3763bed19cd0ec4799c5857379f0b5bd75fe6d8e46e804a22ce
-[15:39:57] wreck.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
-[15:40:04] claimant.withdraw: CLAIMANT withdraw 0xe314848f01c58315546729ec13a724a01cf57b8b6d6494566edf6341347382f4
-[15:40:45] claimant.withdraw: FINALIZED MAJORITY_AGREE leader=SUCCESS in 41 s
-[15:40:47] stats {"type":2,"claim":5,"evidence":9,"determination":5,"established":1,"paid_wei":1000000000000000000}
-[15:40:47] 1 round(s) reached no majority and were asked again
-[15:40:47] the app's own rules agreed with the chain at 6 checks
-[15:40:47] every proof passed
+  validator/validator vote=agree model=policy:dev-gpt-5-4 exec=SUCCESS
+  validator/validator vote=idle model=policy:dev-gpt-5-4 exec=ERROR
+  validator/validator vote=agree model=openai/gpt-5.4 exec=SUCCESS
+[18:21:07] appeal.readjudicate: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
+[18:21:08] appeal: UNDETERMINED -> ESTABLISHED
+[18:21:13] appeal.finalize: STRANGER finalize 0xff738e31567fe0e950fdc15054e5436e012d7cd88adde1ca5ce0abee5dfec935
+[18:21:53] appeal.finalize: FINALIZED MAJORITY_AGREE leader=SUCCESS in 40 s
+[18:22:00] claimant.withdraw: CLAIMANT withdraw 0x58ae92777b9319fb8b863af9e76a449d68476d138958e55e854393606e32c552
+[18:22:35] claimant.withdraw: FINALIZED MAJORITY_AGREE leader=SUCCESS in 36 s
+[18:22:37] stats {"type":2,"claim":5,"evidence":10,"determination":6,"established":2,"paid_wei":2000000000000000000}
+[18:22:37] 1 round(s) reached no majority and were asked again
+[18:22:37] the app's own rules agreed with the chain at 12 checks
+[18:22:38] every proof passed

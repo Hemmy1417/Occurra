@@ -49,7 +49,8 @@ view.
 
 An undetermined determination is not an answer, so it has a defined path:
 
-1. The claimant may appeal it once inside the window, with new evidence.
+1. The claimant may appeal it once inside the window, and must file new evidence during the appeal: an
+   appeal is judged again only on something new, never on argument alone.
 2. If the readjudication is still undetermined, or nobody appeals, the claim
    becomes **final undetermined**: the receipt says the evidence on file did not
    establish the event, the claimant's bond is returned in full, and the
@@ -98,7 +99,7 @@ An undetermined determination is not an answer, so it has a defined path:
 |---|---|---|
 | OPEN | claimant: assess, or withdraw before the evidence deadline | anyone closes it after the evidence deadline: benefit back, bond forfeited to the reserve |
 | DETERMINED | the losing party appeals inside the window | anyone finalizes after the window |
-| UNDER_APPEAL | anyone readjudicates once the evidence period ends, so both sides can answer first | anyone closes it three days after the evidence period: the appealed determination stands and finalizes |
+| UNDER_APPEAL | anyone readjudicates once the evidence period ends, so both sides can answer first, provided the appellant filed new evidence | anyone closes it as soon as the evidence period ends if the appellant filed nothing new, or three days after it otherwise: the appealed determination stands and finalizes |
 | FINAL | terminal | credits wait in the ledger for their owners |
 | WITHDRAWN, CLOSED | terminal | same |
 

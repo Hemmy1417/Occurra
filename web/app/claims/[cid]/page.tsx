@@ -161,7 +161,7 @@ export default function ClaimPage() {
               <Act label="Appeal the determination" method="open_appeal" can={acts.appeal} variant="secondary"
                    prepare={() => (reason.trim().length >= 10 ? [cid, reason.trim()] : "State the grounds in at least 10 characters.")}>
                 {acts.appeal.ok ? (
-                  <Field label="Grounds of appeal" hint="Argument, not evidence. File new evidence once the appeal is open.">
+                  <Field label="Grounds of appeal" hint="Argument, not evidence. Once the appeal is open you must file at least one new photograph or document, or it closes with the determination standing.">
                     <textarea className="field" value={reason} maxLength={2000} onChange={(e) => setReason(e.target.value)} />
                   </Field>
                 ) : null}
@@ -175,12 +175,13 @@ export default function ClaimPage() {
               <p className="t-label text-smoke">Appeal by the {role(c.appeal.by).toLowerCase()}</p>
               <blockquote className="t-small border-l border-ink pl-3 text-graphite">{prose(c.appeal.reason)}</blockquote>
               <p className="t-small text-graphite">
-                Both sides may file new evidence until {when(c.appeal.evidence_ends)}; then anyone can ask for the
-                readjudication.
+                Both sides may file new evidence until {when(c.appeal.evidence_ends)}. The appeal is judged again only
+                if the {role(c.appeal.by).toLowerCase()} files something new; otherwise it closes and the
+                determination stands.
               </p>
               <Act label="Ask for the readjudication" method="readjudicate" args={[cid]} can={acts.readjudicate}
                    working="Validators judge the whole file again, with the evidence filed during the appeal." />
-              {acts.close.ok ? <Act label="Close the undecided appeal" method="close_claim" args={[cid]} variant="secondary" can={acts.close} /> : null}
+              {acts.close.ok ? <Act label="Close the appeal" method="close_claim" args={[cid]} variant="secondary" can={acts.close} /> : null}
             </div>
           ) : null}
 

@@ -34,15 +34,17 @@ deployment.
 
 ## Found by the live proofs
 
-The proof run on the deployment of record is part of the review: it asserts
-what each claim should come to, and two claims came out wrong. Each finding
-meant a new deployment, and the run was repeated from the start on it. The
+The proof runs are part of the review: they assert what each claim should
+come to. Two claims came out wrong, and one outcome was allowed but should not
+have been. Each finding meant a new deployment, and both runs were repeated
+from the start on it. The
 superseded deployments are listed in `docs/proofs/README.md`.
 
 | | Finding | Fix |
 |---|---|---|
 | L1 | A claim filed with a photograph of a different car failed every requirement, but the leading model also called the photograph against the claimant's account a conflict, and the conflict turned a clear rejection into undetermined. With one photograph there is nothing for it to conflict with. | A conflict counts only when its note names two pieces of evidence on this claim, checked in code on every node and on the record (`_conflict_named`); the prompt says a photograph that contradicts the account is a failed requirement, not a conflict. |
 | L2 | On the next deployment the same claim failed the subject check, and in the same answer the model called the evidence insufficient, so the claim was again undetermined. Insufficiency must gate every conclusive outcome (standard S22), so the rule stays. | The prompt now says what sufficient means: evidence that establishes a requirement is not met decides it. A rejection still needs every validator to find the evidence sufficient. |
+| L3 | A sponsor appealed an established claim with no new evidence, only the argument that the leak was slow; a fresh panel reversed it on the same photographs. A readjudication judges afresh, so an appeal on argument alone let a second reading overturn the first. | An appeal is judged again only if the appellant files new evidence during it; otherwise anyone closes it as soon as the evidence period ends and the appealed determination stands (`_brought`). |
 
 ## What the design accepts
 

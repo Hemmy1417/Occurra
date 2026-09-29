@@ -1,161 +1,147 @@
 {
-  "address": "0xceCD0B81fBd1BF4e969C908D1452B26D17066E22",
+  "address": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
   "steps": {
     "types.water": {
       "name": "types.water",
       "role": "SPONSOR",
       "fn": "create_event_type",
-      "hash": "0xa02adca2b75aa9ae4bd762217a4a5e8006f42eddc561131c974296f0ef21b7e6",
-      "secs": 32,
+      "hash": "0xdf16f80e213471b81c806b1e13151099c00d56b93a0241b82526b829073a9f63",
+      "secs": 39,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"type_id\": \"et-00001\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa02adca2b75aa9ae4bd762217a4a5e8006f42eddc561131c974296f0ef21b7e6",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xdf16f80e213471b81c806b1e13151099c00d56b93a0241b82526b829073a9f63",
       "rotations": 1
     },
     "types.collision": {
       "name": "types.collision",
       "role": "SPONSOR",
       "fn": "create_event_type",
-      "hash": "0x380692cf6be497e9069279cf7df1168b5268c94c60bbcebe94f097760bd42580",
-      "secs": 38,
+      "hash": "0xd481e4eba6e38adcb0a073975fd4bf886b9d0e9962b72acb41c6fa8237f408b5",
+      "secs": 47,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"type_id\": \"et-00002\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x380692cf6be497e9069279cf7df1168b5268c94c60bbcebe94f097760bd42580",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd481e4eba6e38adcb0a073975fd4bf886b9d0e9962b72acb41c6fa8237f408b5",
       "rotations": 1
     },
     "enforced.wrong_bond": {
       "name": "enforced.wrong_bond",
       "role": "CLAIMANT",
       "fn": "file_claim",
-      "hash": "0xe8d6f4ff3ab28dec4dfadcd1b42ad815f043e0ed79a45f60b20fabf7f9d60668",
-      "secs": 37,
+      "hash": "0xc7a489cc4e39279e36d93413cbd18e493468348a42bf0399569c1f6a0a5b1270",
+      "secs": 36,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": true, \"reason\": \"the bond for this event type is exactly 100000000000000000 wei; the value sent is credited back\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xe8d6f4ff3ab28dec4dfadcd1b42ad815f043e0ed79a45f60b20fabf7f9d60668",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xc7a489cc4e39279e36d93413cbd18e493468348a42bf0399569c1f6a0a5b1270",
       "rotations": 1
     },
     "enforced.sponsor_claims": {
       "name": "enforced.sponsor_claims",
       "role": "SPONSOR",
       "fn": "file_claim",
-      "hash": "0x0200c9468109fa72d8aa282e49d9840760be6fc2ee1c95d4918c6e94842311d9",
-      "secs": 43,
+      "hash": "0x6240527ca45d136bee949a96cc56d347bdccb6935a7e5e55bd90d561a538864a",
+      "secs": 34,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": true, \"reason\": \"the sponsor cannot claim under its own event type; the value sent is credited back\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x0200c9468109fa72d8aa282e49d9840760be6fc2ee1c95d4918c6e94842311d9",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x6240527ca45d136bee949a96cc56d347bdccb6935a7e5e55bd90d561a538864a",
       "rotations": 1
     },
     "water.file": {
       "name": "water.file",
       "role": "CLAIMANT",
       "fn": "file_claim",
-      "hash": "0x470cfa402ee832bdb57ac0facb3c2171edc91fcf053cf25b3211d3c7c546c944",
-      "secs": 42,
+      "hash": "0xef73e8b6e9ed720061612738c2ebee865fbc5cbf0c35c6eae259657b9fba0538",
+      "secs": 40,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"claim_id\": \"cl-00001\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x470cfa402ee832bdb57ac0facb3c2171edc91fcf053cf25b3211d3c7c546c944",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xef73e8b6e9ed720061612738c2ebee865fbc5cbf0c35c6eae259657b9fba0538",
       "rotations": 1
     },
     "water.scene": {
       "name": "water.scene",
       "role": "CLAIMANT",
       "fn": "submit_image",
-      "hash": "0xd3ea8d79d20039a18821e9bab4d77c021e5b90e614be61830808038f6a8a6809",
-      "secs": 223,
+      "hash": "0xf60233cc319a240dadd96871f3facfb81742faa5e7461fd249d889795fb95204",
+      "secs": 44,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000001\", \"content_hash\": \"4656bdbe58d533b8712c5776ed1a1621121c2260a5a76ed0204ea2c260dfeca7\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd3ea8d79d20039a18821e9bab4d77c021e5b90e614be61830808038f6a8a6809",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xf60233cc319a240dadd96871f3facfb81742faa5e7461fd249d889795fb95204",
       "rotations": 1
     },
     "enforced.preflight": {
       "name": "enforced.preflight",
       "role": "CLAIMANT",
       "fn": "request_assessment",
-      "hash": "0xfb975058ddd380209fec25745407a84634b92376ce62aef582b7bb46ebe7779d",
-      "secs": 37,
+      "hash": "0x032129765189c42e7ba1da7e8fd6042e802dcba1ffde345ff81800946176f4ea",
+      "secs": 39,
       "ok": false,
       "result": "MAJORITY_AGREE",
       "text": "[EXPECTED] the event type requires 1 damage photo before assessment; 0 on file",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xfb975058ddd380209fec25745407a84634b92376ce62aef582b7bb46ebe7779d",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x032129765189c42e7ba1da7e8fd6042e802dcba1ffde345ff81800946176f4ea",
       "rotations": 1
     },
     "water.detail": {
       "name": "water.detail",
       "role": "CLAIMANT",
       "fn": "submit_image",
-      "hash": "0xc92c8597172436cf6e5f861e9eede86e680c0cd83ff4a07acb65be477032de9f",
-      "secs": 40,
+      "hash": "0x2ae00e25f994fcb1eb922b6cba38b1654343e86256df62924dbfaf65018674d1",
+      "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000002\", \"content_hash\": \"5edfce5a5e81fc83da9a51f54e16826b4e9608b8a0bcd6a6eb3d8e1101ab2398\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xc92c8597172436cf6e5f861e9eede86e680c0cd83ff4a07acb65be477032de9f",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2ae00e25f994fcb1eb922b6cba38b1654343e86256df62924dbfaf65018674d1",
       "rotations": 1
     },
     "water.estimate": {
       "name": "water.estimate",
       "role": "CLAIMANT",
       "fn": "submit_document",
-      "hash": "0x07d861f3e81a2b12cf7d90b1186f6600a1f25d2076ae340301b150eca55ddaae",
-      "secs": 39,
+      "hash": "0x434f2a203bba661849e8f6fdc3218f1f2dacf80ebae05bff5296e76604e3f931",
+      "secs": 38,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000003\", \"content_hash\": \"5692842f6006d57cac7b97de4cfb6f97e59e80a460c7cf2cbed194ecbd9e9cbf\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x07d861f3e81a2b12cf7d90b1186f6600a1f25d2076ae340301b150eca55ddaae",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x434f2a203bba661849e8f6fdc3218f1f2dacf80ebae05bff5296e76604e3f931",
       "rotations": 1
     },
     "water.assess": {
       "name": "water.assess",
       "role": "CLAIMANT",
       "fn": "request_assessment",
-      "hash": "0x8c0387af32a617c229575104b4694004f67d846cb42050e2e73e56d3af86a4ec",
-      "secs": 123,
+      "hash": "0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370",
+      "secs": 131,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"determination_id\": \"det-000001\", \"determination\": \"ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T15:27:05Z\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x8c0387af32a617c229575104b4694004f67d846cb42050e2e73e56d3af86a4ec",
-      "rotations": 1,
+      "text": "{\"determination_id\": \"det-000001\", \"determination\": \"ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T17:56:17Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370",
+      "rotations": 2,
       "nodes": [
         {
           "rotation": 1,
           "from": "leader",
           "vote": null,
-          "model": "policy:dev-sonnet",
+          "model": "policy:dev-grok",
           "lines": [
-            "[ASSESS] leader {\"seen\": [\"ev-000001\", \"ev-000002\"], \"determination\": \"ESTABLISHED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"SATISFIED\"}}"
+            "[ASSESS] leader {\"seen\": [\"ev-000001\", \"ev-000002\"], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_ESTABLISHED\"}}"
           ]
         },
         {
           "rotation": 1,
           "from": "leader",
           "vote": "agree",
-          "model": "policy:dev-sonnet",
-          "lines": []
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "agree",
-          "model": "policy:dev-gpt-5-4",
-          "lines": []
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "idle",
           "model": "policy:dev-grok",
           "lines": []
         },
         {
           "rotation": 1,
           "from": "validator",
-          "vote": "agree",
-          "model": "openai/gpt-5.4",
+          "vote": "idle",
+          "model": "policy:dev-sonnet",
           "lines": []
         },
         {
@@ -166,6 +152,68 @@
           "lines": [
             "[DISSENT] this validator could not see any photograph of the scene"
           ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": [
+            "[DISSENT] the leader withholds a finding this node would make mine={\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"SATISFIED\"}"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "openai/gpt-5.4",
+          "lines": [
+            "[DISSENT] the leader withholds a finding this node would make mine={\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"SATISFIED\"}"
+          ]
+        },
+        {
+          "rotation": 2,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-gpt-5-4",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [\"ev-000001\", \"ev-000002\"], \"determination\": \"ESTABLISHED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"SATISFIED\"}}"
+          ]
+        },
+        {
+          "rotation": 2,
+          "from": "leader",
+          "vote": "agree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-sonnet",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "agree",
+          "model": "policy:dev-sonnet",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "agree",
+          "model": "openai/gpt-5.4",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-gpt-oss",
+          "lines": []
         }
       ]
     },
@@ -173,91 +221,91 @@
       "name": "enforced.claimant_appeals_own_win",
       "role": "CLAIMANT",
       "fn": "open_appeal",
-      "hash": "0xabe011693cd73f7d54dbbc9d700628f7f718d80e82400265ecfaf4e3640f7678",
-      "secs": 38,
+      "hash": "0x8fc28ec157edc780b201472282365e9deab4208357d5cc6c84ce44ab79a34bf8",
+      "secs": 36,
       "ok": false,
       "result": "MAJORITY_AGREE",
       "text": "[EXPECTED] only the sponsor appeals an established event",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xabe011693cd73f7d54dbbc9d700628f7f718d80e82400265ecfaf4e3640f7678",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x8fc28ec157edc780b201472282365e9deab4208357d5cc6c84ce44ab79a34bf8",
       "rotations": 1
     },
     "enforced.finalize_early": {
       "name": "enforced.finalize_early",
       "role": "STRANGER",
       "fn": "finalize",
-      "hash": "0x946899a7141f0884c83950357a18edd48e0d69832fce98a85c9ba9e1bdd4ed41",
-      "secs": 43,
+      "hash": "0x9e15b4f748f889bf684f1afa64ffd52392fe3ac1111374a8f56944bf76358287",
+      "secs": 34,
       "ok": false,
       "result": "MAJORITY_AGREE",
       "text": "[EXPECTED] the appeal window is still open",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x946899a7141f0884c83950357a18edd48e0d69832fce98a85c9ba9e1bdd4ed41",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x9e15b4f748f889bf684f1afa64ffd52392fe3ac1111374a8f56944bf76358287",
       "rotations": 1
     },
     "contradicted.file": {
       "name": "contradicted.file",
       "role": "CLAIMANT2",
       "fn": "file_claim",
-      "hash": "0x803636e55af350c1cf8b6c674ef2d34f4456fc0212ce11f4927184d7a1ed2ab6",
-      "secs": 41,
+      "hash": "0x31161013bc5e4b2a0d94174a1c4382a1f5d19cf08fda5e1a5008867d86455290",
+      "secs": 37,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"claim_id\": \"cl-00002\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x803636e55af350c1cf8b6c674ef2d34f4456fc0212ce11f4927184d7a1ed2ab6",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x31161013bc5e4b2a0d94174a1c4382a1f5d19cf08fda5e1a5008867d86455290",
       "rotations": 1
     },
     "contradicted.scene": {
       "name": "contradicted.scene",
       "role": "CLAIMANT2",
       "fn": "submit_image",
-      "hash": "0xae7698bc4e7ca4accf4f44e2866c87e0aec0cc70d787043863eed677aa3eec26",
-      "secs": 39,
+      "hash": "0x807fa34e3aba32036eca9ea663fef1d50eb0da95d65824f186178df1b79fb05e",
+      "secs": 37,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000004\", \"content_hash\": \"4656bdbe58d533b8712c5776ed1a1621121c2260a5a76ed0204ea2c260dfeca7\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xae7698bc4e7ca4accf4f44e2866c87e0aec0cc70d787043863eed677aa3eec26",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x807fa34e3aba32036eca9ea663fef1d50eb0da95d65824f186178df1b79fb05e",
       "rotations": 1
     },
     "contradicted.detail": {
       "name": "contradicted.detail",
       "role": "CLAIMANT2",
       "fn": "submit_image",
-      "hash": "0x9f57885700159ce3a58ea0f088fdec6d677b5618cb7e6d010cf04a7bdba11ee3",
-      "secs": 41,
+      "hash": "0xd3bc68aa2f3d3f8adcd83018e269e8cba6e0f57950cf7de2ee417a247acab159",
+      "secs": 40,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000005\", \"content_hash\": \"5edfce5a5e81fc83da9a51f54e16826b4e9608b8a0bcd6a6eb3d8e1101ab2398\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x9f57885700159ce3a58ea0f088fdec6d677b5618cb7e6d010cf04a7bdba11ee3",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xd3bc68aa2f3d3f8adcd83018e269e8cba6e0f57950cf7de2ee417a247acab159",
       "rotations": 1
     },
     "contradicted.report": {
       "name": "contradicted.report",
       "role": "CLAIMANT2",
       "fn": "submit_document",
-      "hash": "0xb1236b1d4b795077f45df0517875fd6b8a3e58df650ea6d66ca9050037d75121",
-      "secs": 40,
+      "hash": "0x46b111ce460c7367281d1c74d9882b1b0cdd20d65d3bb7e899be09e484db5fa6",
+      "secs": 37,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000006\", \"content_hash\": \"185333a3deb75ff7923c1e8e90e8e518262cd838dd7073e344472d12af2224ab\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xb1236b1d4b795077f45df0517875fd6b8a3e58df650ea6d66ca9050037d75121",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x46b111ce460c7367281d1c74d9882b1b0cdd20d65d3bb7e899be09e484db5fa6",
       "rotations": 1
     },
     "contradicted.assess": {
       "name": "contradicted.assess",
       "role": "CLAIMANT2",
       "fn": "request_assessment",
-      "hash": "0xb99e75e9bd164f46824d60eb819441142b68482491e17fba1c0b894167172d5b",
-      "secs": 83,
+      "hash": "0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b",
+      "secs": 75,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"determination_id\": \"det-000002\", \"determination\": \"UNDETERMINED\", \"appeal_window_ends\": \"2026-09-28T15:33:37Z\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xb99e75e9bd164f46824d60eb819441142b68482491e17fba1c0b894167172d5b",
+      "text": "{\"determination_id\": \"det-000002\", \"determination\": \"UNDETERMINED\", \"appeal_window_ends\": \"2026-09-28T18:02:35Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b",
       "rotations": 1,
       "nodes": [
         {
           "rotation": 1,
           "from": "leader",
           "vote": null,
-          "model": "google/gemini-3-flash-preview",
+          "model": "policy:dev-gpt-5-4",
           "lines": [
             "[ASSESS] leader {\"seen\": [\"ev-000004\", \"ev-000005\"], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_SATISFIED\"}}"
           ]
@@ -265,8 +313,8 @@
         {
           "rotation": 1,
           "from": "leader",
-          "vote": "agree",
-          "model": "google/gemini-3-flash-preview",
+          "vote": "idle",
+          "model": "policy:dev-gpt-5-4",
           "lines": []
         },
         {
@@ -280,7 +328,7 @@
           "rotation": 1,
           "from": "validator",
           "vote": "idle",
-          "model": "policy:dev-gpt-5-4",
+          "model": "policy:dev-gemini",
           "lines": []
         },
         {
@@ -293,11 +341,9 @@
         {
           "rotation": 1,
           "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-mistral",
-          "lines": [
-            "[DISSENT] this validator could not see any photograph of the scene"
-          ]
+          "vote": "agree",
+          "model": "google/gemini-3-flash-preview",
+          "lines": []
         }
       ]
     },
@@ -305,43 +351,43 @@
       "name": "wrongcar.file",
       "role": "CLAIMANT",
       "fn": "file_claim",
-      "hash": "0x26cbc2e8b2d3265ae3d5d795b2195326b5adeff95825d058ed3a435e5744b8ea",
-      "secs": 36,
+      "hash": "0x24fc783f635607eb6aba7b8fbd43d643c19818e794b14184df2f5446572bda3d",
+      "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"claim_id\": \"cl-00003\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x26cbc2e8b2d3265ae3d5d795b2195326b5adeff95825d058ed3a435e5744b8ea",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x24fc783f635607eb6aba7b8fbd43d643c19818e794b14184df2f5446572bda3d",
       "rotations": 1
     },
     "wrongcar.scene": {
       "name": "wrongcar.scene",
       "role": "CLAIMANT",
       "fn": "submit_image",
-      "hash": "0x8cdf745e188cc9d82bfc021f5b04e1e12cc96929529895784a4f9144f31a4e89",
+      "hash": "0x2ef8bad76df21b9a1b71b2e7f391762c34e6fc69153039a186c2b8c5ef4f63be",
       "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000007\", \"content_hash\": \"3bc7038905796d2ecaebe763516e39c32fd6d56cec1731fd46c7be3b8292f7ae\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x8cdf745e188cc9d82bfc021f5b04e1e12cc96929529895784a4f9144f31a4e89",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2ef8bad76df21b9a1b71b2e7f391762c34e6fc69153039a186c2b8c5ef4f63be",
       "rotations": 1
     },
     "wrongcar.assess": {
       "name": "wrongcar.assess",
       "role": "CLAIMANT",
       "fn": "request_assessment",
-      "hash": "0xfad261c475b8c84511862799906598b11ddb228feda03afb9fc5c3772b9e9395",
-      "secs": 83,
+      "hash": "0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7",
+      "secs": 85,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"determination_id\": \"det-000003\", \"determination\": \"NOT_ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T15:36:23Z\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xfad261c475b8c84511862799906598b11ddb228feda03afb9fc5c3772b9e9395",
+      "text": "{\"determination_id\": \"det-000003\", \"determination\": \"NOT_ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T18:05:10Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7",
       "rotations": 2,
       "nodes": [
         {
           "rotation": 1,
           "from": "leader",
           "vote": null,
-          "model": "policy:dev-mistral",
+          "model": "policy:dev-sonnet",
           "lines": [
             "[ASSESS] leader {\"seen\": [], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_ESTABLISHED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
           ]
@@ -349,33 +395,15 @@
         {
           "rotation": 1,
           "from": "leader",
-          "vote": "disagree",
-          "model": "policy:dev-mistral",
-          "lines": [
-            "[DISSENT] the leader could not see any photograph of the scene"
-          ]
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-gemini",
-          "lines": [
-            "[DISSENT] the leader could not see any photograph of the scene"
-          ]
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
           "vote": "idle",
-          "model": "policy:dev-gpt-5-4",
+          "model": "policy:dev-sonnet",
           "lines": []
         },
         {
           "rotation": 1,
           "from": "validator",
           "vote": "disagree",
-          "model": "openai/gpt-5.4",
+          "model": "policy:dev-gpt-5-4",
           "lines": [
             "[DISSENT] the leader could not see any photograph of the scene"
           ]
@@ -386,6 +414,24 @@
           "vote": "idle",
           "model": "policy:dev-gpt-oss",
           "lines": []
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-mistral",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
         },
         {
           "rotation": 2,
@@ -399,17 +445,15 @@
         {
           "rotation": 2,
           "from": "leader",
-          "vote": "disagree",
+          "vote": "agree",
           "model": "policy:dev-gpt-5-4",
-          "lines": [
-            "[DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={\"C1\": \"SATISFIED\", \"C2\": \"NOT_SATISFIED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
-          ]
+          "lines": []
         },
         {
           "rotation": 2,
           "from": "validator",
           "vote": "agree",
-          "model": "policy:dev-gemini",
+          "model": "policy:dev-gpt-5-4",
           "lines": []
         },
         {
@@ -431,9 +475,11 @@
         {
           "rotation": 2,
           "from": "validator",
-          "vote": "agree",
-          "model": "policy:dev-gemini",
-          "lines": []
+          "vote": "disagree",
+          "model": "policy:dev-mistral",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
         }
       ]
     },
@@ -441,43 +487,43 @@
       "name": "wreck.file",
       "role": "CLAIMANT2",
       "fn": "file_claim",
-      "hash": "0x524d63bef3bd4c8e9f8f2733b489e9695da8a300e67d8529b1413658202674ad",
-      "secs": 36,
+      "hash": "0x924c23f77829636507a630d0154ea27adca8f0bc0dec79b3580ae7dc32e401b8",
+      "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"claim_id\": \"cl-00004\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x524d63bef3bd4c8e9f8f2733b489e9695da8a300e67d8529b1413658202674ad",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x924c23f77829636507a630d0154ea27adca8f0bc0dec79b3580ae7dc32e401b8",
       "rotations": 1
     },
     "wreck.scene": {
       "name": "wreck.scene",
       "role": "CLAIMANT2",
       "fn": "submit_image",
-      "hash": "0x95b4c0e56a710ca8bf6d6d1747b73056a74b34f860c555c41d461f8b4d46c466",
-      "secs": 40,
+      "hash": "0x205e6226450ff140b7c884ccebf514cfdd00d91860c0eddb875f1c561a183f08",
+      "secs": 47,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000008\", \"content_hash\": \"b946e3ba45695a0f7a36ff7b4de442dbd79245ee3e105a2185ee1984be2b0e0f\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x95b4c0e56a710ca8bf6d6d1747b73056a74b34f860c555c41d461f8b4d46c466",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x205e6226450ff140b7c884ccebf514cfdd00d91860c0eddb875f1c561a183f08",
       "rotations": 1
     },
     "wreck.assess": {
       "name": "wreck.assess",
       "role": "CLAIMANT2",
       "fn": "request_assessment",
-      "hash": "0xac0d7d18f579d4f5d4a53cd939b4abe7b57dbe3c984942de544816e3c821a4a4",
-      "secs": 80,
+      "hash": "0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2",
+      "secs": 135,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"determination_id\": \"det-000004\", \"determination\": \"NOT_ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T15:39:13Z\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xac0d7d18f579d4f5d4a53cd939b4abe7b57dbe3c984942de544816e3c821a4a4",
-      "rotations": 2,
+      "text": "{\"determination_id\": \"det-000004\", \"determination\": \"UNDETERMINED\", \"appeal_window_ends\": \"2026-09-28T18:08:08Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2",
+      "rotations": 3,
       "nodes": [
         {
           "rotation": 1,
           "from": "leader",
           "vote": null,
-          "model": "policy:dev-deepseek",
+          "model": "policy:dev-gpt-oss",
           "lines": [
             "[ASSESS] leader {\"seen\": [], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_ESTABLISHED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
           ]
@@ -486,7 +532,7 @@
           "rotation": 1,
           "from": "leader",
           "vote": "disagree",
-          "model": "policy:dev-deepseek",
+          "model": "policy:dev-gpt-oss",
           "lines": [
             "[DISSENT] the leader could not see any photograph of the scene"
           ]
@@ -495,14 +541,23 @@
           "rotation": 1,
           "from": "validator",
           "vote": "idle",
-          "model": "policy:dev-grok",
+          "model": "policy:dev-deepseek",
           "lines": []
         },
         {
           "rotation": 1,
           "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
           "vote": "idle",
-          "model": "anthropic/claude-sonnet-4.6",
+          "model": "policy:dev-gemini",
           "lines": []
         },
         {
@@ -510,15 +565,6 @@
           "from": "validator",
           "vote": "disagree",
           "model": "policy:dev-gemini",
-          "lines": [
-            "[DISSENT] the leader could not see any photograph of the scene"
-          ]
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-gpt-5-4",
           "lines": [
             "[DISSENT] the leader could not see any photograph of the scene"
           ]
@@ -529,22 +575,24 @@
           "vote": null,
           "model": "policy:dev-gemini",
           "lines": [
-            "[ASSESS] leader {\"seen\": [\"ev-000008\"], \"determination\": \"NOT_ESTABLISHED\", \"ratings\": {\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
+            "[ASSESS] leader {\"seen\": [\"ev-000008\"], \"determination\": \"NOT_ESTABLISHED\", \"ratings\": {\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_SATISFIED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
           ]
         },
         {
           "rotation": 2,
           "from": "leader",
-          "vote": "idle",
+          "vote": "agree",
           "model": "policy:dev-gemini",
           "lines": []
         },
         {
           "rotation": 2,
           "from": "validator",
-          "vote": "agree",
-          "model": "anthropic/claude-sonnet-4.6",
-          "lines": []
+          "vote": "disagree",
+          "model": "policy:dev-deepseek",
+          "lines": [
+            "[DISSENT] C1: the leader finds it not satisfied, this node finds it not_established mine={\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}"
+          ]
         },
         {
           "rotation": 2,
@@ -556,15 +604,65 @@
         {
           "rotation": 2,
           "from": "validator",
-          "vote": "idle",
-          "model": "policy:dev-sonnet",
-          "lines": []
+          "vote": "disagree",
+          "model": "policy:dev-gemini",
+          "lines": [
+            "[DISSENT] C2: the leader finds it not satisfied, this node finds it not_established mine={\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
+          ]
         },
         {
           "rotation": 2,
           "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-sonnet",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-deepseek",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [\"ev-000008\"], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "leader",
           "vote": "agree",
-          "model": "policy:dev-grok",
+          "model": "policy:dev-deepseek",
+          "lines": []
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "agree",
+          "model": "policy:dev-gemini",
+          "lines": []
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-deepseek",
+          "lines": []
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-sonnet",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "agree",
+          "model": "policy:dev-gpt-5-4",
           "lines": []
         }
       ]
@@ -573,52 +671,59 @@
       "name": "appeal.file",
       "role": "CLAIMANT",
       "fn": "file_claim",
-      "hash": "0x70ffe6ed3799740c0a6d30380e501895b2b5d011e4315d4a6719decc5b34ee2e",
-      "secs": 36,
+      "hash": "0x04ad94a7094a1044c70d22b25b51bae4de716065162cf734ca67207121c18c8f",
+      "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"refused\": false, \"claim_id\": \"cl-00005\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x70ffe6ed3799740c0a6d30380e501895b2b5d011e4315d4a6719decc5b34ee2e",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x04ad94a7094a1044c70d22b25b51bae4de716065162cf734ca67207121c18c8f",
       "rotations": 1
     },
     "appeal.side": {
       "name": "appeal.side",
       "role": "CLAIMANT",
       "fn": "submit_image",
-      "hash": "0xab9758c8397e5ae8108c272661a527c17d1bd6a7a93dbaddf57cb88eb792b65a",
-      "secs": 38,
+      "hash": "0x992314d522af0a8fc68d5807742a8dd911e5d15c8959f7929b0ee24c13372545",
+      "secs": 42,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"evidence_id\": \"ev-000009\", \"content_hash\": \"13bc5c2b4648c86cd3053b3856dd442978b7800cc4795619fde28880f815d723\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xab9758c8397e5ae8108c272661a527c17d1bd6a7a93dbaddf57cb88eb792b65a",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x992314d522af0a8fc68d5807742a8dd911e5d15c8959f7929b0ee24c13372545",
       "rotations": 1
     },
     "appeal.assess": {
       "name": "appeal.assess",
       "role": "CLAIMANT",
       "fn": "request_assessment",
-      "hash": "0x03b69e16af174aa78c578bad9717ed5b325c1a1f12e2b9fae84c2c2ade76d6a0",
-      "secs": 139,
+      "hash": "0x68940e2c5b317b6ba9acd36a9a4421bc3697c805cce56f6c9259fb5e61060627",
+      "secs": 78,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"determination_id\": \"det-000005\", \"determination\": \"ESTABLISHED\", \"appeal_window_ends\": \"2026-09-28T15:44:03Z\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x03b69e16af174aa78c578bad9717ed5b325c1a1f12e2b9fae84c2c2ade76d6a0",
-      "rotations": 2,
+      "text": "{\"determination_id\": \"det-000005\", \"determination\": \"UNDETERMINED\", \"appeal_window_ends\": \"2026-09-28T18:13:06Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x68940e2c5b317b6ba9acd36a9a4421bc3697c805cce56f6c9259fb5e61060627",
+      "rotations": 1,
       "nodes": [
         {
           "rotation": 1,
           "from": "leader",
           "vote": null,
-          "model": "policy:dev-sonnet",
+          "model": "policy:dev-deepseek",
           "lines": [
-            "[ASSESS] leader {\"seen\": [\"ev-000009\"], \"determination\": \"NOT_ESTABLISHED\", \"ratings\": {\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
+            "[ASSESS] leader {\"seen\": [\"ev-000009\"], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"SATISFIED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
           ]
         },
         {
           "rotation": 1,
           "from": "leader",
           "vote": "idle",
-          "model": "policy:dev-sonnet",
+          "model": "policy:dev-deepseek",
+          "lines": []
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "agree",
+          "model": "openai/gpt-5.4",
           "lines": []
         },
         {
@@ -627,8 +732,15 @@
           "vote": "disagree",
           "model": "policy:dev-gemini",
           "lines": [
-            "[DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
+            "[DISSENT] the leader withholds a finding this node would make mine={\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
           ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "agree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": []
         },
         {
           "rotation": 1,
@@ -636,133 +748,325 @@
           "vote": "agree",
           "model": "policy:dev-deepseek",
           "lines": []
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-gpt-5-4",
-          "lines": [
-            "[DISSENT] C1: the leader finds it not satisfied, this node finds it satisfied mine={\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
-          ]
-        },
-        {
-          "rotation": 1,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-gpt-5-4",
-          "lines": [
-            "[DISSENT] this node finds the evidence insufficient to decide mine={\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"SATISFIED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}"
-          ]
-        },
-        {
-          "rotation": 2,
-          "from": "leader",
-          "vote": null,
-          "model": "policy:dev-gpt-5-4",
-          "lines": [
-            "[ASSESS] leader {\"seen\": [\"ev-000009\"], \"determination\": \"ESTABLISHED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
-          ]
-        },
-        {
-          "rotation": 2,
-          "from": "leader",
-          "vote": "agree",
-          "model": "policy:dev-gpt-5-4",
-          "lines": []
-        },
-        {
-          "rotation": 2,
-          "from": "validator",
-          "vote": "agree",
-          "model": "policy:dev-gpt-5-4",
-          "lines": []
-        },
-        {
-          "rotation": 2,
-          "from": "validator",
-          "vote": "agree",
-          "model": "policy:dev-gemini",
-          "lines": []
-        },
-        {
-          "rotation": 2,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-deepseek",
-          "lines": [
-            "[DISSENT] the leader finds it established; this node finds it undetermined mine={\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}"
-          ]
-        },
-        {
-          "rotation": 2,
-          "from": "validator",
-          "vote": "disagree",
-          "model": "policy:dev-gpt-oss",
-          "lines": [
-            "[DISSENT] this validator could not see any photograph of the scene"
-          ]
         }
       ]
+    },
+    "appeal.open": {
+      "name": "appeal.open",
+      "role": "CLAIMANT",
+      "fn": "open_appeal",
+      "hash": "0x19f54b48cf13713265d828dfad81260c86664e0c3d38816a563100ad9086a854",
+      "secs": 36,
+      "ok": true,
+      "result": "MAJORITY_AGREE",
+      "text": "{\"claim_id\": \"cl-00005\", \"evidence_ends\": \"2026-09-28T18:14:33Z\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x19f54b48cf13713265d828dfad81260c86664e0c3d38816a563100ad9086a854",
+      "rotations": 1
+    },
+    "appeal.rear": {
+      "name": "appeal.rear",
+      "role": "CLAIMANT",
+      "fn": "submit_image",
+      "hash": "0x18e5cd14b06a609f1e275a948ff3d984498f732e821e0c461a5aa82bcc659681",
+      "secs": 36,
+      "ok": true,
+      "result": "MAJORITY_AGREE",
+      "text": "{\"evidence_id\": \"ev-000010\", \"content_hash\": \"12620329f4a7bebb96ceacefef4ec77ccd8f4e1d239752578e8783d3d5bbfecb\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x18e5cd14b06a609f1e275a948ff3d984498f732e821e0c461a5aa82bcc659681",
+      "rotations": 1
+    },
+    "enforced.readjudicate_early": {
+      "name": "enforced.readjudicate_early",
+      "role": "CLAIMANT",
+      "fn": "readjudicate",
+      "hash": "0x71b3bc43b21dcc1a00ec1e8d9536e1b8bc90edfc3adc0338fa3b4a77e79d9634",
+      "secs": 36,
+      "ok": false,
+      "result": "MAJORITY_AGREE",
+      "text": "[EXPECTED] the appeal's evidence period is still open, so both sides can still file",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x71b3bc43b21dcc1a00ec1e8d9536e1b8bc90edfc3adc0338fa3b4a77e79d9634",
+      "rotations": 1
     },
     "water.finalize": {
       "name": "water.finalize",
       "role": "STRANGER",
       "fn": "finalize",
-      "hash": "0x9bfcaff27c4c2b3af965418df84f8b64973074e5ea546b41bd51741ed6f375ef",
-      "secs": 42,
+      "hash": "0xcf2c4a9b47fb14c16e6d95df176917b8145061056eeeecf6e41a965c8b58322c",
+      "secs": 40,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"claim_id\": \"cl-00001\", \"state\": \"FINAL\", \"determination\": \"ESTABLISHED\", \"paid_wei\": \"1000000000000000000\", \"bond_to\": \"CLAIMANT\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x9bfcaff27c4c2b3af965418df84f8b64973074e5ea546b41bd51741ed6f375ef",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xcf2c4a9b47fb14c16e6d95df176917b8145061056eeeecf6e41a965c8b58322c",
       "rotations": 1
     },
     "contradicted.finalize": {
       "name": "contradicted.finalize",
       "role": "STRANGER",
       "fn": "finalize",
-      "hash": "0xe77a2eff3776def36d6189553b2f5598c6d6e5c4905a4c889e4507c3f25c5b5e",
-      "secs": 37,
+      "hash": "0xa8bba297b5719ee34dacdd763096b69fa01c87030944ebf64a2ee0c7f3d5ea78",
+      "secs": 40,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"claim_id\": \"cl-00002\", \"state\": \"FINAL\", \"determination\": \"UNDETERMINED\", \"paid_wei\": \"0\", \"bond_to\": \"CLAIMANT\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xe77a2eff3776def36d6189553b2f5598c6d6e5c4905a4c889e4507c3f25c5b5e",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa8bba297b5719ee34dacdd763096b69fa01c87030944ebf64a2ee0c7f3d5ea78",
       "rotations": 1
     },
     "wrongcar.finalize": {
       "name": "wrongcar.finalize",
       "role": "STRANGER",
       "fn": "finalize",
-      "hash": "0x05246c7f3c93fc345d0d8f33d9818ee8dc3eaf6dd48c09f8eb1c0ffd55be9ff3",
-      "secs": 37,
+      "hash": "0xe1dde2372ed4361c1f1263f03175b34c24b182a8e7dbd85cfb3da405513eb801",
+      "secs": 40,
       "ok": true,
       "result": "MAJORITY_AGREE",
       "text": "{\"claim_id\": \"cl-00003\", \"state\": \"FINAL\", \"determination\": \"NOT_ESTABLISHED\", \"paid_wei\": \"0\", \"bond_to\": \"SPONSOR_RESERVE\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x05246c7f3c93fc345d0d8f33d9818ee8dc3eaf6dd48c09f8eb1c0ffd55be9ff3",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xe1dde2372ed4361c1f1263f03175b34c24b182a8e7dbd85cfb3da405513eb801",
       "rotations": 1
     },
     "wreck.finalize": {
       "name": "wreck.finalize",
       "role": "STRANGER",
       "fn": "finalize",
-      "hash": "0xc83b8f918d1ae3763bed19cd0ec4799c5857379f0b5bd75fe6d8e46e804a22ce",
-      "secs": 36,
+      "hash": "0x759369a5825443cab743a5449e883ad92acdff718280dd2f248bb0135b42eb51",
+      "secs": 35,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"claim_id\": \"cl-00004\", \"state\": \"FINAL\", \"determination\": \"NOT_ESTABLISHED\", \"paid_wei\": \"0\", \"bond_to\": \"SPONSOR_RESERVE\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xc83b8f918d1ae3763bed19cd0ec4799c5857379f0b5bd75fe6d8e46e804a22ce",
+      "text": "{\"claim_id\": \"cl-00004\", \"state\": \"FINAL\", \"determination\": \"UNDETERMINED\", \"paid_wei\": \"0\", \"bond_to\": \"CLAIMANT\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x759369a5825443cab743a5449e883ad92acdff718280dd2f248bb0135b42eb51",
+      "rotations": 1
+    },
+    "appeal.readjudicate": {
+      "name": "appeal.readjudicate",
+      "role": "STRANGER",
+      "fn": "readjudicate",
+      "hash": "0xcce3174e84819aaeeddbb9524f9bab9716b9e7b96ffe5b1e1ccb456ad7f29456",
+      "secs": 164,
+      "ok": true,
+      "result": "MAJORITY_AGREE",
+      "text": "{\"determination_id\": \"det-000006\", \"determination\": \"ESTABLISHED\", \"appeal_of\": \"det-000005\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xcce3174e84819aaeeddbb9524f9bab9716b9e7b96ffe5b1e1ccb456ad7f29456",
+      "rotations": 4,
+      "nodes": [
+        {
+          "rotation": 1,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-gpt-oss",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_ESTABLISHED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "leader",
+          "vote": "disagree",
+          "model": "policy:dev-gpt-oss",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "openai/gpt-5.4",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-gemini",
+          "lines": []
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-grok",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 1,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-mistral",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-gemini",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [\"ev-000009\", \"ev-000010\"], \"determination\": \"ESTABLISHED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
+          ]
+        },
+        {
+          "rotation": 2,
+          "from": "leader",
+          "vote": "agree",
+          "model": "policy:dev-gemini",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "agree",
+          "model": "openai/gpt-5.4",
+          "lines": []
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-deepseek",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-grok",
+          "lines": [
+            "[DISSENT] the leader finds it established; this node finds it not established mine={\"C1\": \"NOT_SATISFIED\", \"C2\": \"NOT_SATISFIED\", \"S1\": \"NOT_SATISFIED\", \"S2\": \"NOT_SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}"
+          ]
+        },
+        {
+          "rotation": 2,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-mistral",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-mistral",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [], \"determination\": \"UNDETERMINED\", \"ratings\": {\"C1\": \"NOT_ESTABLISHED\", \"C2\": \"NOT_ESTABLISHED\", \"S1\": \"NOT_ESTABLISHED\", \"S2\": \"NOT_ESTABLISHED\", \"S3\": \"NOT_APPLICABLE\"}}"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "leader",
+          "vote": "disagree",
+          "model": "policy:dev-mistral",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "openai/gpt-5.4",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-deepseek",
+          "lines": []
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-grok",
+          "lines": []
+        },
+        {
+          "rotation": 3,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": [
+            "[DISSENT] the leader could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 4,
+          "from": "leader",
+          "vote": null,
+          "model": "policy:dev-grok",
+          "lines": [
+            "[ASSESS] leader {\"seen\": [\"ev-000009\", \"ev-000010\"], \"determination\": \"ESTABLISHED\", \"ratings\": {\"C1\": \"SATISFIED\", \"C2\": \"SATISFIED\", \"S1\": \"SATISFIED\", \"S2\": \"SATISFIED\", \"S3\": \"NOT_APPLICABLE\"}}"
+          ]
+        },
+        {
+          "rotation": 4,
+          "from": "leader",
+          "vote": "agree",
+          "model": "policy:dev-grok",
+          "lines": []
+        },
+        {
+          "rotation": 4,
+          "from": "validator",
+          "vote": "disagree",
+          "model": "policy:dev-deepseek",
+          "lines": [
+            "[DISSENT] this validator could not see any photograph of the scene"
+          ]
+        },
+        {
+          "rotation": 4,
+          "from": "validator",
+          "vote": "agree",
+          "model": "policy:dev-gpt-5-4",
+          "lines": []
+        },
+        {
+          "rotation": 4,
+          "from": "validator",
+          "vote": "idle",
+          "model": "policy:dev-gpt-5-4",
+          "lines": []
+        },
+        {
+          "rotation": 4,
+          "from": "validator",
+          "vote": "agree",
+          "model": "openai/gpt-5.4",
+          "lines": []
+        }
+      ]
+    },
+    "appeal.finalize": {
+      "name": "appeal.finalize",
+      "role": "STRANGER",
+      "fn": "finalize",
+      "hash": "0xff738e31567fe0e950fdc15054e5436e012d7cd88adde1ca5ce0abee5dfec935",
+      "secs": 40,
+      "ok": true,
+      "result": "MAJORITY_AGREE",
+      "text": "{\"claim_id\": \"cl-00005\", \"state\": \"FINAL\", \"determination\": \"ESTABLISHED\", \"paid_wei\": \"1000000000000000000\", \"bond_to\": \"CLAIMANT\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xff738e31567fe0e950fdc15054e5436e012d7cd88adde1ca5ce0abee5dfec935",
       "rotations": 1
     },
     "claimant.withdraw": {
       "name": "claimant.withdraw",
       "role": "CLAIMANT",
       "fn": "withdraw",
-      "hash": "0xe314848f01c58315546729ec13a724a01cf57b8b6d6494566edf6341347382f4",
-      "secs": 41,
+      "hash": "0x58ae92777b9319fb8b863af9e76a449d68476d138958e55e854393606e32c552",
+      "secs": 36,
       "ok": true,
       "result": "MAJORITY_AGREE",
-      "text": "{\"to\": \"0x68A6C31229797747E8b2291E37bfe05175770a2e\", \"wei\": \"1150000000000000000\"}",
-      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xe314848f01c58315546729ec13a724a01cf57b8b6d6494566edf6341347382f4",
+      "text": "{\"to\": \"0x68A6C31229797747E8b2291E37bfe05175770a2e\", \"wei\": \"2250000000000000000\"}",
+      "explorer": "https://explorer-studio-dev.genlayer.com/tx/0x58ae92777b9319fb8b863af9e76a449d68476d138958e55e854393606e32c552",
       "rotations": 1
     }
   },
@@ -804,7 +1108,49 @@
       "got": false,
       "why": "The appeal window is still open."
     },
+    "appeal.claimant_may_appeal": {
+      "role": "CLAIMANT",
+      "act": "appeal",
+      "expected": true,
+      "got": true,
+      "why": ""
+    },
+    "appeal.sponsor_may_not": {
+      "role": "SPONSOR",
+      "act": "appeal",
+      "expected": false,
+      "got": false,
+      "why": "Only the claimant appeals a determination that did not establish the event."
+    },
+    "appeal.sponsor_cannot_file": {
+      "role": "SPONSOR",
+      "act": "fileImage",
+      "expected": false,
+      "got": false,
+      "why": "Only the claimant, the claim's assessor, or the sponsor during its own appeal files evidence."
+    },
+    "appeal.too_early_to_rejudge": {
+      "role": "STRANGER",
+      "act": "readjudicate",
+      "expected": false,
+      "got": false,
+      "why": "The appeal's evidence period is still open, so both sides can still file."
+    },
     "water.final_now": {
+      "role": "STRANGER",
+      "act": "finalize",
+      "expected": true,
+      "got": true,
+      "why": ""
+    },
+    "appeal.rejudge_now": {
+      "role": "STRANGER",
+      "act": "readjudicate",
+      "expected": true,
+      "got": true,
+      "why": ""
+    },
+    "appeal.final_at_once": {
       "role": "STRANGER",
       "act": "finalize",
       "expected": true,
@@ -815,7 +1161,7 @@
   "determinations": {
     "water.assess": {
       "determination_id": "det-000001",
-      "tx": "0x8c0387af32a617c229575104b4694004f67d846cb42050e2e73e56d3af86a4ec",
+      "tx": "0x66b6fb318fb312dd72f07878db26de55651889dace7c3de5e732e3f90c43a370",
       "outcome": "ESTABLISHED",
       "ratings": {
         "C1": "SATISFIED",
@@ -829,7 +1175,7 @@
     },
     "contradicted.assess": {
       "determination_id": "det-000002",
-      "tx": "0xb99e75e9bd164f46824d60eb819441142b68482491e17fba1c0b894167172d5b",
+      "tx": "0x10034734d3b3a83dde9b9f57560a8403752a8a422c8c80ab79bf979a7219bd7b",
       "outcome": "UNDETERMINED",
       "ratings": {
         "C1": "SATISFIED",
@@ -843,7 +1189,7 @@
     },
     "wrongcar.assess": {
       "determination_id": "det-000003",
-      "tx": "0xfad261c475b8c84511862799906598b11ddb228feda03afb9fc5c3772b9e9395",
+      "tx": "0xa005b65258d1aa0e8ddb82c63ff110c429a24c679beaced61fe734c931ead4b7",
       "outcome": "NOT_ESTABLISHED",
       "ratings": {
         "C1": "NOT_SATISFIED",
@@ -857,21 +1203,35 @@
     },
     "wreck.assess": {
       "determination_id": "det-000004",
-      "tx": "0xac0d7d18f579d4f5d4a53cd939b4abe7b57dbe3c984942de544816e3c821a4a4",
-      "outcome": "NOT_ESTABLISHED",
+      "tx": "0x2a08b0d18f7e570c1a7b61c1d9fbd2a7487b548c92987753ddae5d010e0e5ae2",
+      "outcome": "UNDETERMINED",
       "ratings": {
-        "C1": "NOT_SATISFIED",
+        "C1": "NOT_ESTABLISHED",
         "C2": "NOT_ESTABLISHED",
         "S1": "NOT_SATISFIED",
-        "S2": "NOT_SATISFIED",
+        "S2": "NOT_ESTABLISHED",
         "S3": "NOT_APPLICABLE"
       },
       "conflicts": false,
-      "sufficient": true
+      "sufficient": false
     },
     "appeal.assess": {
       "determination_id": "det-000005",
-      "tx": "0x03b69e16af174aa78c578bad9717ed5b325c1a1f12e2b9fae84c2c2ade76d6a0",
+      "tx": "0x68940e2c5b317b6ba9acd36a9a4421bc3697c805cce56f6c9259fb5e61060627",
+      "outcome": "UNDETERMINED",
+      "ratings": {
+        "C1": "NOT_ESTABLISHED",
+        "C2": "NOT_ESTABLISHED",
+        "S1": "SATISFIED",
+        "S2": "NOT_ESTABLISHED",
+        "S3": "NOT_APPLICABLE"
+      },
+      "conflicts": false,
+      "sufficient": false
+    },
+    "appeal.readjudicate": {
+      "determination_id": "det-000006",
+      "tx": "0xcce3174e84819aaeeddbb9524f9bab9716b9e7b96ffe5b1e1ccb456ad7f29456",
       "outcome": "ESTABLISHED",
       "ratings": {
         "C1": "SATISFIED",
@@ -884,13 +1244,13 @@
       "sufficient": true
     }
   },
+  "appeal_path": "appealed",
   "no_consensus": [
     {
-      "name": "appeal.assess",
-      "hash": "0xb716e87ca2f615f902e4c06e60c25c53231bbbef174ad86557d098f08acabded",
+      "name": "appeal.readjudicate",
+      "hash": "0x619079eb6f63dd0af54982df381a9dc0481a941b4ee254983da140d44c8471bc",
       "result": "UNDETERMINED",
-      "at": "2026-09-28T15:33:46.594Z"
+      "at": "2026-09-28T18:18:03.877Z"
     }
-  ],
-  "appeal_path": "established on the first asking"
+  ]
 }

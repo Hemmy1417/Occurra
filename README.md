@@ -36,6 +36,10 @@ occurred as defined. Whether anyone is paid follows from that in code.
 4. Appeal a determination that went against you once; both sides answer before it is judged again.
 5. Once final, withdraw what the ledger owes you: the benefit and your bond if the event was established.
 
+An appeal must bring new evidence. A readjudication judges the whole file afresh, so an appeal on argument alone
+would let a second panel reverse the first on the same photographs; the live runs showed exactly that, and the
+rule was added.
+
 ## Outcomes
 
 | Outcome | When | Money |
@@ -56,11 +60,12 @@ file_claim ─► OPEN ── evidence filed ── request_assessment (prefligh
                │  └─ (before the deadline) ─►   DETERMINED ◄─────────────────────┐
                │      WITHDRAWN, bond back          │ open_appeal               │ readjudicate
                │                                    ▼ (the party it went        │ (anyone, after the
-               │ close_claim                   UNDER_APPEAL   against)          │  evidence period;
-               │ (evidence deadline passed)         │ ──────────────────────────┘  a new, linked
-               ▼                                    │ close_claim, 3 days after     determination)
-            CLOSED                                  │ the evidence period: the appealed
-     bond forfeited to the reserve                  │ determination stands
+               │ close_claim                   UNDER_APPEAL   against)          │  evidence period, if the
+               │ (evidence deadline passed)         │ ──────────────────────────┘  appellant filed something
+               ▼                                    │ close_claim: at once if the    new; a new, linked
+            CLOSED                                  │ appellant filed nothing new,   determination)
+     bond forfeited to the reserve                  │ else 3 days after the evidence
+                                                    │ period: the appealed determination stands
                                                     ▼
                                        finalize (window passed, or no appeal left)
                                                     │
@@ -73,7 +78,7 @@ file_claim ─► OPEN ── evidence filed ── request_assessment (prefligh
 |---|---|---|
 | `OPEN` | the claimant files evidence and asks for the assessment, or withdraws before the evidence deadline | anyone closes it after the deadline; the benefit returns to the reserve and the bond is forfeited to it |
 | `DETERMINED` | the party the determination went against appeals inside the window | anyone finalizes once the window has passed |
-| `UNDER_APPEAL` | both sides may add bounded evidence during the evidence period; then anyone asks for the readjudication | anyone closes it three days after the evidence period: the appealed determination stands and becomes final |
+| `UNDER_APPEAL` | both sides may add bounded evidence during the evidence period; then anyone asks for the readjudication, which runs only if the appellant filed something new | anyone closes it: at once if the appellant filed nothing new, otherwise three days after the evidence period. The appealed determination stands and becomes final |
 | `FINAL`, `WITHDRAWN`, `CLOSED` | none: terminal | every amount waits in the ledger for its owner's `withdraw` |
 
 A determination runs `APPEALABLE`, then `APPEALED` and `SUPERSEDED` by its readjudication (and kept exactly as
@@ -92,8 +97,8 @@ recorded), or `FINAL`. See [docs/design.md](docs/design.md).
 | | |
 |---|---|
 | Network | GenLayer Studio Next, chain 61997, `https://studio-next.genlayer.com/api` |
-| Contract (deployment of record) | [`0xceCD0B81fBd1BF4e969C908D1452B26D17066E22`](https://explorer-studio-dev.genlayer.com/address/0xceCD0B81fBd1BF4e969C908D1452B26D17066E22) |
-| Source | [`contracts/occurra.py`](contracts/occurra.py), sha256 `73632543ef19a41d729c8f1dcef6a4dc8ca766f26e54f714fdd60d53b1c17792`, byte-for-byte identical to the deployed code (`node scripts/deploy.mjs verify`) |
+| Contract (deployment of record) | [`0x0F35F98559284e3fFbCe91ad522A58CeE634444E`](https://explorer-studio-dev.genlayer.com/address/0x0F35F98559284e3fFbCe91ad522A58CeE634444E) |
+| Source | [`contracts/occurra.py`](contracts/occurra.py), sha256 `5628334459789a78df1813634ca5f0c00de2d5952efa868486b1949b4897c779`, byte-for-byte identical to the deployed code (`node scripts/deploy.mjs verify`) |
 | Runner | `py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng` |
 | Ruleset | `occurra-rules-1` |
 
@@ -111,7 +116,7 @@ recorded), or `FINAL`. See [docs/design.md](docs/design.md).
 | `submit_image`, `submit_document` | the claimant, the claim's assessor, the sponsor during its own appeal | | quotas per party; PNG or JFIF, at most 400 KB; the same bytes never twice |
 | `request_assessment` | the claimant | | once, before the evidence deadline, with the evidence rules met |
 | `open_appeal` | the party the determination went against | | inside the window, while appeals remain |
-| `readjudicate` | anyone | | after the appeal's evidence period |
+| `readjudicate` | anyone | | after the appeal's evidence period, and only if the appellant filed new evidence |
 | `finalize`, `close_claim` | anyone | | once no appeal can be filed; lapsed claims and undecided appeals |
 | `withdraw_claim` | the claimant | | before assessment and before the evidence deadline |
 | `withdraw` | anyone owed credit | | the pull transfer to the caller's own wallet |
@@ -135,39 +140,41 @@ recorded), or `FINAL`. See [docs/design.md](docs/design.md).
 
 | | |
 |---|---|
-| Contract tests | 226 direct tests: every rule, the determination rule, grounding, both interested-party floors, validator dissent on raw and settled results, the audit regressions, one test per judges' standard, and a randomized walk that asserts value conserved to the wei after every action and reaches every state and outcome |
+| Contract tests | 230 direct tests: every rule, the determination rule, grounding, both interested-party floors, validator dissent on raw and settled results, the audit regressions, one test per judges' standard, and a randomized walk that asserts value conserved to the wei after every action and reaches every state and outcome |
 | Contract sweep | every mutant killed, control passes ([docs/proofs/sweep.txt](docs/proofs/sweep.txt)) |
 | App tests | the action rules run on records the contract wrote (a direct test fails if those records drift), every contract write reachable from a page, value sent only to payable writes, and a write signed by the connected wallet |
-| Pre-deployment review | two adversarial reviews found fifteen defects before the deployment of record; the live proofs found two more. All fixed and pinned ([docs/security.md](docs/security.md)) |
+| Pre-deployment review | two adversarial reviews found fifteen defects before the deployment of record, and the live runs found three more. All fixed and pinned ([docs/security.md](docs/security.md)); each live finding meant a new deployment and a full rerun ([superseded deployments](docs/proofs/README.md#superseded-deployments)) |
 
-Live proofs ran on the deployment of record, `0xceCD0B81fBd1BF4e969C908D1452B26D17066E22`, and the appeals,
-the assessor and the exits on a second deployment of the same bytes, with six public photographs ([fixtures/ATTRIBUTION.md](fixtures/ATTRIBUTION.md)). Every transaction is in
+Live proofs ran on the deployment of record, `0x0F35F98559284e3fFbCe91ad522A58CeE634444E`, and the second
+appeals, the assessor and the exits on a second deployment of the same bytes, with six public photographs ([fixtures/ATTRIBUTION.md](fixtures/ATTRIBUTION.md)). Every transaction is in
 [docs/proofs](docs/proofs/README.md).
 
 | Case | Evidence | Outcome on chain |
 |---|---|---|
-| The enforced half | a wrong bond, a sponsor claiming under its own type, an assessment before the damage photograph, a claimant appealing its own win, an early finalize | refused in the contract's own words, no validator asked; the refused bond credited back |
+| The enforced half | a wrong bond, a sponsor claiming under its own type, an assessment before the damage photograph, a claimant appealing its own win, an early finalize, an early readjudication | refused in the contract's own words, no validator asked; the refused bond credited back |
 | Escape of water | the stained ceiling, the leaking trap, a plumber's estimate | **Established**, every requirement satisfied and no conflict raised (the conflict flag's negative control); finalized after its window; the claimant credited exactly the 1 GEN benefit and the bond, then withdrew them |
 | A report that contradicts the photographs | the same photographs, and a plumber's report saying nothing is damaged | **Undetermined**: the documents check failed and a conflict naming the two pieces of evidence was raised; the bond came back |
 | A different car | a red saloon filed as the claimant's white one | **Not established**, the subject check failed; the bond went to the reserve |
-| A wreck, not a collision | a rusted, burnt-out car filed as fresh collision damage | **Not established**, the cause check failed; the bond went to the reserve |
-| A claimant's appeal | the leaking trap alone, then the stained ceiling filed on appeal | **Undetermined**, then **established** on readjudication, linked to the determination it reviewed, which is kept as superseded |
-| A sponsor's appeal | an established claim, contested on argument alone | **Not established** on readjudication (the cause check); no requirement failed on the sponsor's photographs, as it filed none. Recorded as observed in [docs/proofs](docs/proofs/README.md) |
+| A wreck, not a collision | a rusted, burnt-out car filed as fresh collision damage | never established: the subject check failed and the panel found the evidence not enough to decide, so the rejection was withheld (standard S22) and the bond came back. An earlier deployment failed it on the cause check ([why both are recorded](docs/proofs/README.md)) |
+| A claimant's appeal | a side view of the car, then the rear view filed on appeal | **Undetermined**, then **established** on readjudication, linked to the determination it reviewed, which is kept as superseded |
+| An appeal that brings nothing new | an undetermined claim appealed with no new evidence | readjudication refused; the appeal closed at once, the determination standing and the bond returned |
+| A sponsor's appeal | an established claim, contested with a loss adjuster's note | **Undetermined** on readjudication; no requirement failed on the sponsor's document, and the bond came back ([recorded as observed](docs/proofs/README.md)) |
 | An independent assessor | a type that requires one; the assessor accepts and files a report | refused before acceptance and to a stranger; then **established**, every satisfied criterion citing the assessor's report |
 | The exits and controls | withdrawal, a new version, a pause, reserve withdrawal | the bond returned exactly; the open claim kept its version; the paused type refused a claim; idle reserve credited exactly and drawn |
-| The app's own rules | `web/lib/acts.ts`, run against chain state | matched the chain at every check |
+| The app's own rules | `web/lib/acts.ts`, run against chain state | matched the chain at all twenty-nine checks |
 
 ```text
-[15:19:11] water.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"SATISFIED"} sufficient=true conflicts=false
-[15:25:03] contradicted.assess: UNDETERMINED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_SATISFIED"} sufficient=true conflicts=true
-[15:27:48] wrongcar.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_SATISFIED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
-[15:30:35] wreck.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_ESTABLISHED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
-[15:40:47] every proof passed
+[17:48:29] water.assess: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"SATISFIED"} sufficient=true conflicts=false
+[17:53:52] contradicted.assess: UNDETERMINED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_SATISFIED"} sufficient=true conflicts=true
+[17:56:37] wrongcar.assess: NOT_ESTABLISHED {"C1":"NOT_SATISFIED","C2":"NOT_SATISFIED","S1":"NOT_SATISFIED","S2":"NOT_SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
+[18:04:25] appeal.assess: UNDETERMINED {"C1":"NOT_ESTABLISHED","C2":"NOT_ESTABLISHED","S1":"SATISFIED","S2":"NOT_ESTABLISHED","S3":"NOT_APPLICABLE"} sufficient=false conflicts=false
+[18:21:07] appeal.readjudicate: ESTABLISHED {"C1":"SATISFIED","C2":"SATISFIED","S1":"SATISFIED","S2":"SATISFIED","S3":"NOT_APPLICABLE"} sufficient=true conflicts=false
+[18:22:38] every proof passed
 ```
 
-> Together these two photographs establish both water damage to interior surfaces and an identifiable internal
-> fitting as the source. [...] The plumber's estimate (ev-000003) corroborates the account but is a party
-> document; the photographs independently support the findings.
+> The photographs establish both fresh interior water damage and an active leak from internal plumbing. [...] The
+> plumber's estimate in ev-000003 is not scene proof by itself, but it is consistent with the photographs and the
+> claimant's account.
 >
 > (the leading validator's recorded reasoning on the escape of water, `det-000001`)
 

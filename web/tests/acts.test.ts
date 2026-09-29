@@ -95,12 +95,31 @@ describe("an appeal", () => {
     expect(acts("appeal_by_sponsor", "CLAIMANT", T0).fileImage.ok).toBe(true);
   });
 
-  it("is readjudicated by anyone once both sides could answer", () => {
+  it("is readjudicated by anyone once both sides could answer, if the appellant brought something new", () => {
     expect(acts("appeal_by_sponsor", "SPONSOR", T0).readjudicate.ok).toBe(false);
     expect(acts("appeal_by_sponsor", "STRANGER", AFTER_WINDOW).readjudicate.ok).toBe(true);
+    expect(acts("appeal_by_claimant_with_evidence", "STRANGER", AFTER_WINDOW).readjudicate.ok).toBe(true);
+    const bare = acts("appeal_by_claimant", "STRANGER", AFTER_WINDOW);
+    expect(bare.readjudicate.ok).toBe(false);
+    expect(bare.readjudicate.why).toMatch(/no new evidence/);
   });
 
-  it("closes as undecided only three days after its evidence period", () => {
+  it("counts only the appellant's own new evidence", () => {
+    // A claimant's appeal answered only by the assessor brought nothing new from the claimant.
+    const s = S.appeal_by_claimant!;
+    const answer = { ...s.claim.evidence![0]!, evidence_id: "ev-000099", role: "ASSESSOR" as const };
+    const claim = { ...s.claim, evidence: [...s.claim.evidence!, answer] };
+    const a = claimActs(claim, s.version, s.determination, A.STRANGER!, AFTER_WINDOW);
+    expect(a.readjudicate.ok).toBe(false);
+    expect(a.close.ok).toBe(true);
+  });
+
+  it("closes an appeal that brought nothing new as soon as its evidence period ends", () => {
+    expect(acts("appeal_by_claimant", "STRANGER", T0).close.ok).toBe(false);
+    expect(acts("appeal_by_claimant", "STRANGER", AFTER_WINDOW).close.ok).toBe(true);
+  });
+
+  it("closes an appeal that brought evidence only three days after its evidence period", () => {
     expect(acts("appeal_by_sponsor", "STRANGER", AFTER_WINDOW).close.ok).toBe(false);
     expect(acts("appeal_by_sponsor", "STRANGER", STALE).close.ok).toBe(true);
   });

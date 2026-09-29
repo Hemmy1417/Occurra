@@ -88,10 +88,12 @@ def test_s14_s28_a_readjudication_reads_the_stored_bytes(module, c):
     before = [e["content_hash"] for e in json.loads(c.get_snapshot("snap-000001"))["evidence"]]
     as_(module, CLAIMANT)
     c.open_appeal(cid, "A clearer photograph follows here.")
+    new = photo(module, c, cid, view="DAMAGE_DETAIL", description="A clearer photograph")
     llm(look=seen(2), judge=judgment(ratings()))
     rejudge(module, c, cid)
-    after = [e["content_hash"] for e in json.loads(c.get_snapshot("snap-000002"))["evidence"]]
-    assert after == before
+    after = {e["evidence_id"]: e["content_hash"] for e in json.loads(c.get_snapshot("snap-000002"))["evidence"]}
+    assert [after[e["evidence_id"]] for e in json.loads(c.get_snapshot("snap-000001"))["evidence"]] == before
+    assert new in after
 
 
 def test_s17_s26_every_open_state_has_an_exit_anyone_can_take(module, c):

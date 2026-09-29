@@ -238,7 +238,7 @@ if (u1.determination === "ESTABLISHED") {
   await offered("undetermined.too_early", U, "STRANGER", "readjudicate", false);
   await step("enforced.readjudicate_early", "CLAIMANT", "readjudicate", [U], { refused: "both sides can still file" });
   const c = await readJson("get_claim", [U]);
-  await waitUntil(c.appeal.evidence_ends, "the appeal's evidence period");
+  if (c.appeal) await waitUntil(c.appeal.evidence_ends, "the appeal's evidence period");
   await offered("undetermined.rejudge_now", U, "STRANGER", "readjudicate", true);
   const u2 = await decide("undetermined.readjudicate", "readjudicate", U, "STRANGER");
   assert(u2.appeal_of === u1.determination_id, "the readjudication is not linked to the determination it reviews");
@@ -272,12 +272,16 @@ if (e1.determination !== "ESTABLISHED") {
   await offered("contested.claimant_may_not", E, "CLAIMANT2", "appeal", false);
   await step("contested.appeal", "SPONSOR", "open_appeal",
              [E, "A slow leak over months, not a sudden escape of water, stained this ceiling."]);
-  await offered("contested.sponsor_files", E, "SPONSOR", "fileImage", true);
+  await offered("contested.sponsor_files", E, "SPONSOR", "fileDocument", true);
   await offered("contested.claimant_answers", E, "CLAIMANT2", "fileImage", true);
+  await offered("contested.nothing_new_yet", E, "STRANGER", "readjudicate", false);
+  await doc("contested.adjuster", "SPONSOR", E, "INCIDENT_REPORT", "Loss adjuster's note",
+    "Visited 12 Larch Road. The ceiling stain shows several tide marks, which form over repeated wetting. The trap "
+    + "joint has mineral deposits consistent with a slow weep over months rather than a sudden escape of water.");
   const c = await readJson("get_claim", [E]);
-  await waitUntil(c.appeal.evidence_ends, "the sponsor's appeal evidence period");
+  if (c.appeal) await waitUntil(c.appeal.evidence_ends, "the sponsor's appeal evidence period");
   const e2 = await decide("contested.readjudicate", "readjudicate", E, "STRANGER");
-  // The sponsor filed nothing of its own, so nothing can have failed on its photographs.
+  // The sponsor filed a document, not a photograph, so nothing can have failed on its photographs.
   const roles = Object.fromEntries((await readJson("get_snapshot", [e2.snapshot_id])).evidence.map((x) => [x.evidence_id, x.role]));
   for (const id of e2.failed) {
     const cited = e2.notes.basis[id] ?? [];
@@ -286,6 +290,38 @@ if (e1.determination !== "ESTABLISHED") {
   say(`contested: ${e1.determination} -> ${e2.determination} on the sponsor's appeal`);
   run.sponsor_appeal = `${e1.determination} -> ${e2.determination}`;
   await step("contested.finalize", "STRANGER", "finalize", [E]);
+}
+save();
+
+// ── 2b. an appeal that brings nothing new is not judged again ───────────────
+
+const N = await claimFor("bare", "CLAIMANT", P, {
+  subject: "Kitchen of 3 Birch Lane", subject_ref: "Policy HOME-0001", location: "3 Birch Lane",
+  event_date: EVENT_DATE, declared_cause: "A split fitting under the sink",
+  account: "The fitting under the kitchen sink split overnight and water spread from it.",
+}, BOND);
+await image("bare.leak", "CLAIMANT", N, "trap-leak", "DAMAGE_DETAIL", "The leaking fitting under the sink");
+const n1 = await decide("bare.assess", "request_assessment", N, "CLAIMANT");
+if (n1.determination === "ESTABLISHED") {
+  say("bare: established on the first asking, so there is nothing to appeal");
+  run.bare_appeal = "established on the first asking";
+} else {
+  await step("bare.appeal", "CLAIMANT", "open_appeal", [N, "The panel should look again at the same photograph."]);
+  const c = await readJson("get_claim", [N]);
+  if (c.appeal) await waitUntil(c.appeal.evidence_ends, "the bare appeal's evidence period");
+  await offered("bare.not_rejudged", N, "STRANGER", "readjudicate", false);
+  await step("enforced.rejudge_nothing_new", "STRANGER", "readjudicate", [N], { refused: "filed no new evidence" });
+  await offered("bare.closes_at_once", N, "STRANGER", "close", true);
+  const before = run.steps["bare.close"] ? null : await credit("CLAIMANT");
+  await step("bare.close", "STRANGER", "close_claim", [N]);
+  const after = await readJson("get_claim", [N]);
+  assert(after.state === "FINAL" && after.final.how === "appeal brought no new evidence"
+         && after.final.determination_id === n1.determination_id, "the bare appeal did not close with the determination standing");
+  if (before !== null && n1.determination === "UNDETERMINED") {
+    assert((await credit("CLAIMANT")) - before === BOND, "the bond did not come back when the undetermined claim closed");
+  }
+  say(`bare: ${n1.determination} stands; the appeal brought nothing new and closed at once`);
+  run.bare_appeal = `${n1.determination} stands`;
 }
 save();
 

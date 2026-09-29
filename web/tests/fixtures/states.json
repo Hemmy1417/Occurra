@@ -280,6 +280,296 @@
    "version": 1
   }
  },
+ "appeal_by_claimant_with_evidence": {
+  "claim": {
+   "account": "Water across the kitchen floor in the morning.",
+   "appeal": {
+    "by": "CLAIMANT",
+    "determination_id": "det-000002",
+    "evidence_ends": "2026-09-20T10:00:00Z",
+    "mark": 6,
+    "opened_at": "2026-09-20T09:00:00Z",
+    "opened_by": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+    "reason": "A clearer photograph of the damage follows."
+   },
+   "appeals_used": 0,
+   "assessor": "0x69730962CE945c8da10817A6aE53fBAff7675531",
+   "benefit_wei": "2000000000000000000",
+   "bond_to": null,
+   "bond_wei": "100000000000000000",
+   "claim_id": "cl-00002",
+   "claimant": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+   "close_reason": null,
+   "closed_at": null,
+   "declared_cause": "A split fitting",
+   "determination_id": "det-000002",
+   "determinations": [
+    "det-000002"
+   ],
+   "event_date": "2026-09-18",
+   "evidence": [
+    {
+     "bytes": 4000,
+     "capture_note": "Taken the morning after",
+     "claim_id": "cl-00002",
+     "content_hash": "b942aa7e43c5dd704529999702bf7d35571ef3fa50d258e17c95df198b2f8327",
+     "description": "The kitchen floor under the sink, water pooled on the tiles",
+     "during_appeal": false,
+     "evidence_id": "ev-000004",
+     "kind": "IMAGE",
+     "role": "CLAIMANT",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+     "type_id": "et-00001",
+     "view": "SCENE"
+    },
+    {
+     "bytes": 4000,
+     "capture_note": "Taken the morning after",
+     "claim_id": "cl-00002",
+     "content_hash": "2291cc89f75380a921ea1eb1ac43693e68db4954cd249264127c4d370c28bc31",
+     "description": "Swollen cabinet base, tide mark",
+     "during_appeal": false,
+     "evidence_id": "ev-000005",
+     "kind": "IMAGE",
+     "role": "CLAIMANT",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+     "type_id": "et-00001",
+     "view": "DAMAGE_DETAIL"
+    },
+    {
+     "bytes": 13,
+     "capture_note": "",
+     "claim_id": "cl-00002",
+     "content_hash": "ef73c5b5f92e213109afba8db6637dfa0399a19156a68b8c62733b84fa3b8791",
+     "description": "",
+     "doc_type": "ASSESSOR_REPORT",
+     "during_appeal": false,
+     "evidence_id": "ev-000006",
+     "kind": "DOCUMENT",
+     "role": "ASSESSOR",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x69730962CE945c8da10817A6aE53fBAff7675531",
+     "title": "Plumber's estimate",
+     "type_id": "et-00001"
+    },
+    {
+     "bytes": 4000,
+     "capture_note": "Taken the morning after",
+     "claim_id": "cl-00002",
+     "content_hash": "22482b6b00f5a6ceb08d46a69e25d38c95dc2fcf68159d2b408c84c60add0b11",
+     "description": "A clearer photograph",
+     "during_appeal": true,
+     "evidence_id": "ev-000007",
+     "kind": "IMAGE",
+     "role": "CLAIMANT",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+     "type_id": "et-00001",
+     "view": "DAMAGE_DETAIL"
+    }
+   ],
+   "evidence_ends": "2026-10-04T09:00:00Z",
+   "filed_at": "2026-09-20T09:00:00Z",
+   "final": null,
+   "location": "",
+   "now": "2026-09-20T09:00:00Z",
+   "sponsor": "0x691e25a08e00Fa16Fc95b159589ba563727d77a8",
+   "state": "UNDER_APPEAL",
+   "subject": "Ground-floor kitchen of 14 Alder Row",
+   "subject_ref": "Policy HOME-2291",
+   "type_id": "et-00001",
+   "type_version": 1
+  },
+  "determination": {
+   "appeal": null,
+   "appeal_of": null,
+   "appeal_window_ends": "2026-09-20T10:00:00Z",
+   "appeals_left": 1,
+   "bound": {
+    "determination": true,
+    "ratings_by": "leader",
+    "requirements": []
+   },
+   "claim_id": "cl-00002",
+   "claimant": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+   "conflicts_detected": false,
+   "decided_at": "2026-09-20T09:00:00Z",
+   "determination": "UNDETERMINED",
+   "determination_id": "det-000002",
+   "evidence_sufficient": true,
+   "failed": [],
+   "finalized_at": null,
+   "kind": "ASSESSMENT",
+   "lifecycle": "APPEALED",
+   "not_established": [
+    "C1",
+    "C2"
+   ],
+   "notes": {
+    "basis": {
+     "C1": [
+      "ev-000004"
+     ],
+     "C2": [
+      "ev-000004"
+     ],
+     "S1": [
+      "ev-000004"
+     ],
+     "S2": [
+      "ev-000004"
+     ],
+     "S3": [
+      "ev-000004"
+     ]
+    },
+    "conflict_note": "",
+    "observations": [
+     {
+      "change": "",
+      "evidence_id": "ev-000004",
+      "role": "CLAIMANT",
+      "seen": true,
+      "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",
+      "subject_doubts": "",
+      "text": [],
+      "view": "SCENE"
+     },
+     {
+      "change": "",
+      "evidence_id": "ev-000005",
+      "role": "CLAIMANT",
+      "seen": true,
+      "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",
+      "subject_doubts": "",
+      "text": [],
+      "view": "DAMAGE_DETAIL"
+     }
+    ],
+    "raw": {
+     "C1": "NOT_ESTABLISHED",
+     "C2": "SATISFIED",
+     "S1": "SATISFIED",
+     "S2": "SATISFIED",
+     "S3": "NOT_APPLICABLE"
+    },
+    "reasoning": "Weighed the photographs and documents against each requirement.",
+    "requirement_notes": {
+     "C1": "",
+     "C2": "",
+     "S1": "",
+     "S2": "",
+     "S3": ""
+    }
+   },
+   "requested_by": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+   "requirements": [
+    {
+     "id": "C1",
+     "source": "EVENT_TYPE",
+     "status": "NOT_ESTABLISHED",
+     "text": "The photographs show water damage to interior surfaces: staining, swelling, or standing water."
+    },
+    {
+     "id": "C2",
+     "source": "EVENT_TYPE",
+     "status": "NOT_ESTABLISHED",
+     "text": "The water came from an internal pipe, fitting or appliance, not from rain or flooding outside."
+    },
+    {
+     "id": "S1",
+     "source": "SYSTEM",
+     "status": "SATISFIED",
+     "text": "The evidence shows the subject the claim names: nothing in it shows a different property, vehicle, consignment or premises from the one described."
+    },
+    {
+     "id": "S2",
+     "source": "SYSTEM",
+     "status": "SATISFIED",
+     "text": "The damage or disruption shown is consistent with the declared cause and with the kind of event this type covers, rather than another cause such as wear, age or a different kind of incident."
+    },
+    {
+     "id": "S3",
+     "source": "SYSTEM",
+     "status": "NOT_APPLICABLE",
+     "text": "The documents filed agree with what the photographs and the assessor's evidence show."
+    }
+   ],
+   "snapshot_id": "snap-000002",
+   "superseded_by": null,
+   "type_id": "et-00001",
+   "type_version": 1,
+   "unseen": []
+  },
+  "type": {
+   "accepted_assessors": [
+    "0x69730962CE945c8da10817A6aE53fBAff7675531"
+   ],
+   "benefit_wei": "2000000000000000000",
+   "bond_wei": "100000000000000000",
+   "category": "PROPERTY",
+   "claim_count": 2,
+   "committed_wei": "4000000000000000000",
+   "created_at": "2026-09-20T09:00:00Z",
+   "event_kind": "WATER_DAMAGE",
+   "forfeited_wei": "0",
+   "free_wei": "16000000000000000000",
+   "funded_wei": "20000000000000000000",
+   "now": "2026-09-20T09:00:00Z",
+   "open_claims": 2,
+   "paid_wei": "0",
+   "reserve_wei": "20000000000000000000",
+   "sponsor": "0x691e25a08e00Fa16Fc95b159589ba563727d77a8",
+   "state": "ACTIVE",
+   "title": "Escape of water from internal plumbing",
+   "type_id": "et-00001",
+   "version": 1,
+   "withdrawn_wei": "0"
+  },
+  "version": {
+   "appeal_window_seconds": 3600,
+   "assessor_required": false,
+   "assessors": [
+    "0x69730962CE945c8da10817A6aE53fBAff7675531"
+   ],
+   "benefit_wei": "2000000000000000000",
+   "bond_wei": "100000000000000000",
+   "category": "PROPERTY",
+   "criteria": [
+    {
+     "id": "C1",
+     "text": "The photographs show water damage to interior surfaces: staining, swelling, or standing water."
+    },
+    {
+     "id": "C2",
+     "text": "The water came from an internal pipe, fitting or appliance, not from rain or flooding outside."
+    }
+   ],
+   "definition": "Sudden damage to the insured home caused by water escaping from a fixed internal pipe, fitting, tank or appliance.",
+   "event_kind": "WATER_DAMAGE",
+   "evidence_days": 14,
+   "evidence_period_seconds": 3600,
+   "evidence_requirements": [
+    {
+     "min_count": 1,
+     "type": "SCENE_PHOTO"
+    },
+    {
+     "min_count": 1,
+     "type": "DAMAGE_PHOTO"
+    }
+   ],
+   "exclusions": "Gradual leaks, damp, condensation, and water entering from outside the building.",
+   "filing_window_days": 30,
+   "max_appeals": 1,
+   "published_at": "2026-09-20T09:00:00Z",
+   "title": "Escape of water from internal plumbing",
+   "type_id": "et-00001",
+   "version": 1
+  }
+ },
  "appeal_by_sponsor": {
   "claim": {
    "account": "I came down in the morning to water across the kitchen floor. The fitting under the sink had split; I shut off the stopcock and called a plumber.",
@@ -1144,6 +1434,21 @@
      "submitter": "0x69730962CE945c8da10817A6aE53fBAff7675531",
      "title": "Plumber's estimate",
      "type_id": "et-00001"
+    },
+    {
+     "bytes": 4000,
+     "capture_note": "Taken the morning after",
+     "claim_id": "cl-00002",
+     "content_hash": "22482b6b00f5a6ceb08d46a69e25d38c95dc2fcf68159d2b408c84c60add0b11",
+     "description": "A clearer photograph",
+     "during_appeal": true,
+     "evidence_id": "ev-000007",
+     "kind": "IMAGE",
+     "role": "CLAIMANT",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+     "type_id": "et-00001",
+     "view": "DAMAGE_DETAIL"
     }
    ],
    "evidence_ends": "2026-10-04T09:00:00Z",
@@ -1228,6 +1533,16 @@
      {
       "change": "",
       "evidence_id": "ev-000005",
+      "role": "CLAIMANT",
+      "seen": true,
+      "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",
+      "subject_doubts": "",
+      "text": [],
+      "view": "DAMAGE_DETAIL"
+     },
+     {
+      "change": "",
+      "evidence_id": "ev-000007",
       "role": "CLAIMANT",
       "seen": true,
       "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",
@@ -1781,6 +2096,21 @@
      "submitter": "0x69730962CE945c8da10817A6aE53fBAff7675531",
      "title": "Plumber's estimate",
      "type_id": "et-00001"
+    },
+    {
+     "bytes": 4000,
+     "capture_note": "Taken the morning after",
+     "claim_id": "cl-00002",
+     "content_hash": "22482b6b00f5a6ceb08d46a69e25d38c95dc2fcf68159d2b408c84c60add0b11",
+     "description": "A clearer photograph",
+     "during_appeal": true,
+     "evidence_id": "ev-000007",
+     "kind": "IMAGE",
+     "role": "CLAIMANT",
+     "submitted_at": "2026-09-20T09:00:00Z",
+     "submitter": "0x56e71175C0772a21a6170E3D95184f126526e9f2",
+     "type_id": "et-00001",
+     "view": "DAMAGE_DETAIL"
     }
    ],
    "evidence_ends": "2026-10-04T09:00:00Z",
@@ -1858,6 +2188,16 @@
      {
       "change": "",
       "evidence_id": "ev-000005",
+      "role": "CLAIMANT",
+      "seen": true,
+      "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",
+      "subject_doubts": "",
+      "text": [],
+      "view": "DAMAGE_DETAIL"
+     },
+     {
+      "change": "",
+      "evidence_id": "ev-000007",
       "role": "CLAIMANT",
       "seen": true,
       "shows": "A kitchen floor with standing water under an open sink cabinet; the cabinet base is swollen.",

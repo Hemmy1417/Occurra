@@ -143,11 +143,13 @@ def test_an_appeal_needs_grounds_and_the_window(module, c):
         c.open_appeal(cid, "The photographs were blurred")
 
 
-def _claimant_appeal(module, c):
+def _claimant_appeal(module, c, evidence=False):
     tid, cid = _decided(module, c, judge=judgment(ratings(C1="NOT_ESTABLISHED")))
     as_(module, CLAIMANT)
     out = json.loads(c.open_appeal(cid, "The damage photograph was blurred; a clear one follows."))
     assert out["evidence_ends"] == "2026-09-20T10:00:00Z"
+    if evidence:
+        photo(module, c, cid, view="DAMAGE_DETAIL", description="A clear close-up of the damage")
     return tid, cid
 
 
@@ -196,7 +198,7 @@ def test_readjudication_links_and_supersedes(module, c):
 
 
 def test_anyone_readjudicates_after_the_evidence_period(module, c):
-    tid, cid = _claimant_appeal(module, c)
+    tid, cid = _claimant_appeal(module, c, evidence=True)
     set_now(AFTER_WINDOW)
     llm(look=seen(2), judge=judgment(ratings(C1="NOT_ESTABLISHED")))
     as_(module, STRANGER)
@@ -208,7 +210,7 @@ def test_anyone_readjudicates_after_the_evidence_period(module, c):
 
 
 def test_a_failed_readjudication_round_changes_nothing(module, c):
-    tid, cid = _claimant_appeal(module, c)
+    tid, cid = _claimant_appeal(module, c, evidence=True)
     llm(look=seen(2), judge=judgment(ratings()), v_judge=judgment(ratings(C1="NOT_ESTABLISHED")))
     as_(module, CLAIMANT)
     with pytest.raises(err(module), match="did not agree"):
@@ -219,7 +221,7 @@ def test_a_failed_readjudication_round_changes_nothing(module, c):
 
 
 def test_an_undecided_appeal_closes_three_days_after_its_evidence_period(module, c):
-    tid, cid = _claimant_appeal(module, c)
+    tid, cid = _claimant_appeal(module, c, evidence=True)
     as_(module, STRANGER)
     set_now("2026-09-23T10:00:00Z")
     with pytest.raises(err(module), match="three days after"):
@@ -292,11 +294,61 @@ def test_the_sponsors_photographs_can_carry_a_satisfied_rating_for_the_claimant(
 
 
 def test_the_event_log_tells_the_story(module, c):
-    tid, cid = _claimant_appeal(module, c)
+    tid, cid = _claimant_appeal(module, c, evidence=True)
     llm(look=seen(2), judge=judgment(ratings()))
     as_(module, CLAIMANT)
     rejudge(module, c, cid)
     c.finalize(cid)
     assert events(c, tid) == ["TYPE_CREATED", "RESERVE_FUNDED", "CLAIM_FILED", "EVIDENCE_FILED",
-                              "EVIDENCE_FILED", "DETERMINATION_RECORDED", "APPEAL_OPENED",
+                              "EVIDENCE_FILED", "DETERMINATION_RECORDED", "APPEAL_OPENED", "EVIDENCE_FILED",
                               "DETERMINATION_RECORDED", "CLAIM_FINAL"]
+
+
+# ── an appeal is judged again only on something new ─────────────────────────
+
+def test_an_appeal_without_new_evidence_is_not_judged_again(module, c):
+    tid, cid = _claimant_appeal(module, c)
+    set_now(AFTER_WINDOW)
+    as_(module, STRANGER)
+    with pytest.raises(err(module), match="filed no new evidence"):
+        c.readjudicate(cid)
+    out = json.loads(c.close_claim(cid))
+    assert out["determination"] == "UNDETERMINED"
+    k = claim(c, cid)
+    assert k["state"] == "FINAL" and k["final"]["how"] == "appeal brought no new evidence"
+    assert k["appeals_used"] == 0 and owed(c, CLAIMANT) == BOND
+
+
+def test_an_appeal_without_new_evidence_closes_only_after_its_evidence_period(module, c):
+    tid, cid = _claimant_appeal(module, c)
+    set_now("2026-09-20T10:00:00Z")
+    as_(module, STRANGER)
+    with pytest.raises(err(module), match="evidence period is still open"):
+        c.close_claim(cid)
+
+
+def test_only_the_appellants_own_evidence_counts(module, c):
+    """A sponsor's appeal answered only by the claimant brought nothing new
+    from the sponsor, so it is not judged again."""
+    tid, cid = _decided(module, c)
+    as_(module, SPONSOR)
+    c.open_appeal(cid, "The stain predates the policy.")
+    photo(module, c, cid, view="SCENE", description="The claimant's answer")
+    set_now(AFTER_WINDOW)
+    as_(module, STRANGER)
+    with pytest.raises(err(module), match="filed no new evidence"):
+        c.readjudicate(cid)
+    out = json.loads(c.close_claim(cid))
+    assert out["determination"] == "ESTABLISHED"
+    assert owed(c, CLAIMANT) == BENEFIT + BOND
+
+
+def test_a_sponsor_document_is_new_evidence(module, c):
+    from conftest import document
+    tid, cid = _decided(module, c)
+    as_(module, SPONSOR)
+    c.open_appeal(cid, "Our adjuster found a slow leak.")
+    document(module, c, cid, who=SPONSOR, doc_type="INCIDENT_REPORT", title="Adjuster's note",
+             text="The trap has been weeping for months.")
+    llm(look=seen(2), judge=judgment(ratings(), basis={"S3": ["ev-000001"]}))
+    assert rejudge(module, c, cid)["appeal_of"] == "det-000001"

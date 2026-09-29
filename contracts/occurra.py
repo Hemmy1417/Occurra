@@ -1455,10 +1455,19 @@ class Occurra(gl.contract.Contract):
         return json.dumps({"determination_id": d["determination_id"], "determination": d["determination"],
                            "appeal_window_ends": d["appeal_window_ends"]})
 
+    def _brought(self, c: dict) -> bool:
+        """Whether the appellant filed anything during its appeal. An appeal
+        is judged again only on something new: a fresh panel reading the same
+        file on argument alone is not a review."""
+        a = c["appeal"]
+        return any(_seq(e) > int(a["mark"]) and self._item(e)["role"] == a["by"] for e in self._items(c["claim_id"]))
+
     @gl.public.write
     def open_appeal(self, cid: str, reason: str) -> str:
         """The party a determination went against, inside the window: the
-        sponsor against an established event, the claimant against the rest."""
+        sponsor against an established event, the claimant against the rest.
+        The appellant must then file new evidence before the evidence period
+        ends, or the appeal closes with the determination standing."""
         c = self._claim(str(cid))
         if c["state"] != "DETERMINED":
             _refuse("only a standing determination is appealed")
@@ -1494,14 +1503,17 @@ class Occurra(gl.contract.Contract):
     @gl.public.write
     def readjudicate(self, cid: str) -> str:
         """Anyone, once the appeal's evidence period has ended, so both sides
-        have had the chance to answer. Validators judge the whole stored file
-        afresh."""
+        have had the chance to answer, and only if the appellant filed new
+        evidence. Validators judge the whole stored file afresh."""
         c = self._claim(str(cid))
         if c["state"] != "UNDER_APPEAL":
             _refuse("only a claim under appeal is readjudicated")
         a = c["appeal"]
         if _now() <= _parse_iso(a["evidence_ends"]):
             _refuse("the appeal's evidence period is still open, so both sides can still file")
+        if not self._brought(c):
+            _refuse("the appellant filed no new evidence, so there is nothing to judge again; the appeal can be "
+                    "closed and the appealed determination stands")
         eids = self._adjudicable(c["claim_id"])
         new_ids = [e for e in eids if _seq(e) > int(a["mark"])]
         if not any(self._item(e)["kind"] == "IMAGE" and self._item(e)["view"] != "DOCUMENT_SCAN" for e in eids):
@@ -1575,9 +1587,10 @@ class Occurra(gl.contract.Contract):
         """Anyone. A claim never assessed closes after its evidence period: the
         benefit goes back to the reserve and the bond is forfeited to it, since
         the claimant held the benefit committed for the whole period and could
-        have withdrawn at any time for the bond back. An appeal nobody decided
-        closes three days after its evidence period: the appealed determination
-        stands and becomes final."""
+        have withdrawn at any time for the bond back. An appeal that brought
+        no new evidence closes as soon as its evidence period ends, and one
+        nobody decided closes three days after it; either way the appealed
+        determination stands and becomes final."""
         c = self._claim(str(cid))
         now = _now()
         if c["state"] == "OPEN":
@@ -1590,13 +1603,17 @@ class Occurra(gl.contract.Contract):
             self._event(c["type_id"], "CLAIM_CLOSED", c["claim_id"], "lapsed unassessed")
             return json.dumps({"claim_id": c["claim_id"], "state": "CLOSED", "bond_to": out["bond_to"]})
         if c["state"] == "UNDER_APPEAL":
-            stale = _parse_iso(c["appeal"]["evidence_ends"]) + timedelta(seconds=STALE_APPEAL_SECONDS)
-            if now <= stale:
-                _refuse("an open appeal closes only if undecided three days after its evidence period")
+            ends = _parse_iso(c["appeal"]["evidence_ends"])
+            if now <= ends:
+                _refuse("the appeal's evidence period is still open")
+            empty = not self._brought(c)
+            if not empty and now <= ends + timedelta(seconds=STALE_APPEAL_SECONDS):
+                _refuse("an appeal that brought new evidence closes only if undecided three days after its "
+                        "evidence period")
             prior = self._determination(c["appeal"]["determination_id"])
             prior["notes"]["finalized_undecided_on_appeal"] = True
             c["appeal"] = None
-            return self._conclude(c, prior, "appeal left undecided")
+            return self._conclude(c, prior, "appeal brought no new evidence" if empty else "appeal left undecided")
         _refuse("an assessed claim is finalized, not closed")
 
     @gl.public.write

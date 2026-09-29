@@ -61,6 +61,8 @@ def _walk(module, c):
     as_(module, CLAIMANT)
     c.open_appeal(b, "A clearer photograph of the damage follows.")
     snap("appeal_by_claimant", b)
+    photo(module, c, b, view="DAMAGE_DETAIL", description="A clearer photograph", data=jfif(b"appeal detail"))
+    snap("appeal_by_claimant_with_evidence", b)
     rejudge(module, c, b)
     snap("readjudicated_no_appeals_left", b)
     c.finalize(b)

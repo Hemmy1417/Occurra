@@ -139,6 +139,13 @@ export function room(c: Claim, role: Role, bucket: "IMAGE" | "TEXT"): number {
   return Math.max(0, QUOTAS[role][bucket] - mine.length);
 }
 
+/** Whether the appellant filed anything during its appeal: an appeal is judged again only on something new. */
+export function brought(c: Claim): boolean {
+  if (!c.appeal) return false;
+  const a = c.appeal;
+  return (c.evidence ?? []).some((e) => seq(e.evidence_id) > a.mark && e.role === a.by);
+}
+
 export interface ClaimActs {
   role: Role | null;
   fileImage: Can;
@@ -192,6 +199,7 @@ export function claimActs(c: Claim, version: TypeVersion, d: Determination | nul
     [!addr, "Connect a wallet."],
     [c.state !== "UNDER_APPEAL" || !c.appeal, "Only a claim under appeal is readjudicated."],
     [!!c.appeal && now <= t(c.appeal.evidence_ends), "The appeal's evidence period is still open, so both sides can still file."],
+    [!!c.appeal && !brought(c), "The appellant filed no new evidence, so there is nothing to judge again; the appeal can be closed."],
   );
 
   const finalize = first(
@@ -205,8 +213,10 @@ export function claimActs(c: Claim, version: TypeVersion, d: Determination | nul
   else if (c.state === "OPEN") {
     close = now > t(c.evidence_ends) ? yes : no("The claim's evidence period has not ended.");
   } else if (c.state === "UNDER_APPEAL" && c.appeal) {
-    close = now > t(c.appeal.evidence_ends) + STALE_APPEAL_MS
-      ? yes : no("An appeal closes only if undecided three days after its evidence period.");
+    if (now <= t(c.appeal.evidence_ends)) close = no("The appeal's evidence period is still open.");
+    else if (!brought(c)) close = yes;
+    else close = now > t(c.appeal.evidence_ends) + STALE_APPEAL_MS
+      ? yes : no("An appeal that brought new evidence closes only if undecided three days after its evidence period.");
   } else close = no("Only an open claim or a stale appeal is closed.");
 
   const withdraw = first(

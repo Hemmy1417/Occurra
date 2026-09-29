@@ -95,6 +95,7 @@ def test_the_readjudication_edge_for_strangers(module, c):
     assess(module, c, cid, judge=judgment(ratings(C1="NOT_ESTABLISHED")))
     as_(module, CLAIMANT)
     c.open_appeal(cid, "Grounds for this appeal")
+    photo(module, c, cid, view="DAMAGE_DETAIL", description="A clearer close-up")
     llm(look=seen(2), judge=judgment(ratings()))
     set_now("2026-09-20T10:00:00Z")
     for who in (CLAIMANT, STRANGER):
@@ -120,6 +121,7 @@ def test_a_second_appeal_when_the_type_allows_two(module, c):
     assert d["appeals_left"] == 1 and d["appeal_window_ends"] == "2026-09-20T11:00:01Z"
     as_(module, SPONSOR)
     c.open_appeal(cid, "The sponsor now appeals the established result")
+    photo(module, c, cid, who=SPONSOR, view="SCENE", description="The sponsor's own photograph")
     assert claim(c, cid)["appeal"]["by"] == "SPONSOR" and claim(c, cid)["appeal"]["mark"] == 3
     llm(look=[seen(2), seen(1)], judge=judgment(ratings()))
     as_(module, SPONSOR)
