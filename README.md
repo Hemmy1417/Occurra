@@ -143,6 +143,7 @@ recorded), or `FINAL`. See [docs/design.md](docs/design.md).
 | Contract tests | 230 direct tests: every rule, the determination rule, grounding, both interested-party floors, validator dissent on raw and settled results, the audit regressions, one test per judges' standard, and a randomized walk that asserts value conserved to the wei after every action and reaches every state and outcome |
 | Contract sweep | every mutant killed, control passes ([docs/proofs/sweep.txt](docs/proofs/sweep.txt)) |
 | App tests | the action rules run on records the contract wrote (a direct test fails if those records drift), every contract write reachable from a page, value sent only to payable writes, and a write signed by the connected wallet |
+| Interface walkthrough | one claim from event type to withdrawal, every write composed and signed from the app's pages, each hash proved from the chain ([docs/proofs/ui-e2e.md](docs/proofs/ui-e2e.md)) |
 | Pre-deployment review | two adversarial reviews found fifteen defects before the deployment of record, and the live runs found three more. All fixed and pinned ([docs/security.md](docs/security.md)); each live finding meant a new deployment and a full rerun ([superseded deployments](docs/proofs/README.md#superseded-deployments)) |
 
 Live proofs ran on the deployment of record, `0x0F35F98559284e3fFbCe91ad522A58CeE634444E`, and the second

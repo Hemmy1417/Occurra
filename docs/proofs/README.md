@@ -1,12 +1,14 @@
 # Live proofs
 
 Two runs, each a script whose every claim is an assertion; if the contract or the panel had behaved otherwise, the
-run would have stopped and said which. Both are resumable and keep every transaction hash as it is sent.
+run would have stopped and said which. Both are resumable and keep every transaction hash as it is sent. A third
+walkthrough took one claim from start to finish through the app itself, and is proved from the chain afterwards.
 
 | Run | Deployment | Script | Log | Record |
 |---|---|---|---|---|
 | Proofs | deployment of record `0x0F35F98559284e3fFbCe91ad522A58CeE634444E` | [scripts/proofs.mjs](../../scripts/proofs.mjs) | [proof-run.txt](proof-run.txt) | [proofs.json](proofs.json) |
 | Paths | `0x7cE30a4A45D2dC34a07DDb13BB51f068D99FAf06`, the same bytes | [scripts/paths.mjs](../../scripts/paths.mjs) | [paths-run.txt](paths-run.txt) | [paths.json](paths.json) |
+| Interface | deployment of record, signed from the app's own pages | [scripts/ui-e2e.mjs](../../scripts/ui-e2e.mjs) reads it back | [ui-e2e.md](ui-e2e.md) | [ui-e2e.json](ui-e2e.json) |
 
 The long paths ran on a second deployment of the same source so that a network stall there could never block the
 deployment the app writes to. Explorer: `https://explorer-studio-dev.genlayer.com/address/<address>`, and

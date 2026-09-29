@@ -92,11 +92,18 @@ export function Act({
               return;
             }
             const hash = outcome.hash;
+            // Only a payable write can be refused without failing (it returns the
+            // refusal and credits the value back); every other confirmed write is
+            // announced at once, without waiting on another read of the network.
+            if (value === undefined || value === 0n) announceConfirmed(hash, label);
             void returnedJson<Answer>(hash).then((a) => {
               if (a?.refused) setAnswer(refusal(String(a.reason ?? "")));
-              else announceConfirmed(hash, label);
+              else if (value !== undefined && value > 0n) announceConfirmed(hash, label);
               onAnswer?.(a, outcome);
-            }).catch(() => onAnswer?.(null, outcome));
+            }).catch(() => {
+              if (value !== undefined && value > 0n) announceConfirmed(hash, label);
+              onAnswer?.(null, outcome);
+            });
           }}
         />
       ) : null}

@@ -1,0 +1,136 @@
+{
+  "address": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+  "chain_id": 61997,
+  "transactions": [
+    {
+      "step": "Write the event type",
+      "role": "SPONSOR",
+      "method": "create_event_type",
+      "hash": "0xd6c69413b6052f3efd55f2b791d3d478c0c040a59e2b11e0cea818ec277f2b4e",
+      "from": "0x28c304F3f3e3b215748FCc5596DFd83346F57e2B",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T05:48:23.285806+00:00",
+      "messages": 0
+    },
+    {
+      "step": "File the claim and post the bond",
+      "role": "CLAIMANT",
+      "method": "file_claim",
+      "hash": "0xf80bb705e70de1a24024ef38ae686cad91869b0f7cd5ac705b47bd04bdf50a1c",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T05:55:10.948996+00:00",
+      "messages": 0
+    },
+    {
+      "step": "File the scene photograph",
+      "role": "CLAIMANT",
+      "method": "submit_image",
+      "hash": "0xdfd02223335fe910f16fbd0aa2e9ae27101a7d1baf21934a0379a5c8747a4145",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:02:16.517204+00:00",
+      "messages": 0
+    },
+    {
+      "step": "File the damage photograph",
+      "role": "CLAIMANT",
+      "method": "submit_image",
+      "hash": "0x4dbe02530067a04b851bab639ce4abe893b37e76fbdafc5bf9d804cc1a529dc7",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:09:57.938848+00:00",
+      "messages": 0
+    },
+    {
+      "step": "Ask for the assessment (first asking)",
+      "role": "CLAIMANT",
+      "method": "request_assessment",
+      "hash": "0xd8843fddd36a2af5113fe6b5c99ddb814919a46c6c72ec955d28e910e4ed41b7",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_DISAGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:12:46.698794+00:00",
+      "messages": 0
+    },
+    {
+      "step": "Ask for the assessment (asked again)",
+      "role": "CLAIMANT",
+      "method": "request_assessment",
+      "hash": "0x03f57e10ef5b564e8053303e72053509b4c1d685898ecfbec464b48858798ca2",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:18:01.015734+00:00",
+      "messages": 0
+    },
+    {
+      "step": "Finalize once the appeal window closed",
+      "role": "STRANGER",
+      "method": "finalize",
+      "hash": "0xe26bc3a67d8e50db74090001e2ecdf382b7373cf5a1310d2a539acd40ba5b362",
+      "from": "0x2b796120975e099757a2d134FeE89af083cB3Eba",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:32:27.152595+00:00",
+      "messages": 0
+    },
+    {
+      "step": "Withdraw the credit",
+      "role": "CLAIMANT",
+      "method": "withdraw",
+      "hash": "0x666742c959031cdc16aeb73850247bc7c8efdcd57f851aae5af6b39cf4899465",
+      "from": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+      "to": "0x0F35F98559284e3fFbCe91ad522A58CeE634444E",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "leader_execution": "SUCCESS",
+      "created_at": "2026-09-29T06:34:25.786993+00:00",
+      "messages": 1,
+      "transfer": {
+        "to": "0x68A6C31229797747E8b2291E37bfe05175770a2e",
+        "value_wei": "1100000000000000000"
+      }
+    }
+  ],
+  "state": {
+    "claim": {
+      "id": "cl-00006",
+      "state": "FINAL",
+      "how": "finalized",
+      "paid_wei": "1000000000000000000",
+      "determination": "det-000007",
+      "type": "et-00003"
+    },
+    "determination": {
+      "id": "det-000007",
+      "determination": "ESTABLISHED",
+      "lifecycle": "FINAL"
+    },
+    "event_type": {
+      "id": "et-00003",
+      "title": "Burst or leaking plumbing inside the home (walkthrough)",
+      "state": "ACTIVE"
+    },
+    "claimant_credit_after_withdrawal": "0"
+  },
+  "failures": []
+}
