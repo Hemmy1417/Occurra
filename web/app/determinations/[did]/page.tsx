@@ -25,7 +25,7 @@ export default function Receipt() {
   const d = det.data;
   const snap = useChain(d ? `snapshot.${d.snapshot_id}` : null, () => getSnapshot(d!.snapshot_id));
 
-  if (det.error) return <Section><ReadFailure what="this determination" /></Section>;
+  if (det.error) return <Section><ReadFailure what="this determination" retrying={det.retrying} /></Section>;
   if (det.data === null) return <Section><Empty>There is no determination with this number.</Empty></Section>;
   if (!d) return <Section><Loading what="the determination" /></Section>;
   const bound = new Set(d.bound.requirements);
@@ -76,7 +76,12 @@ export default function Receipt() {
                 </span>
                 <span className="t-small inline-flex items-start gap-2">
                   <Glyph kind={r.status} />
-                  <span>{rating(r.status)}{bound.has(r.id) ? <span className="block t-label text-smoke">Reproduced by every validator</span> : null}</span>
+                  <span>
+                    {rating(r.status)}
+                    {r.status === "NOT_APPLICABLE"
+                      ? <span className="block t-label text-smoke">Decided in code from the file</span>
+                      : bound.has(r.id) ? <span className="block t-label text-smoke">Reproduced by every validator</span> : null}
+                  </span>
                 </span>
               </li>
             ))}

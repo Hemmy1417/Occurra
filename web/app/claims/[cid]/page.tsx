@@ -41,7 +41,7 @@ export default function ClaimPage() {
                        (f) => getDetermination(c!.determination_id!, f));
   const [reason, setReason] = useState("");
 
-  if (claim.error) return <Section><ReadFailure what="this claim" /></Section>;
+  if (claim.error) return <Section><ReadFailure what="this claim" retrying={claim.retrying} /></Section>;
   if (claim.data === null) return <Section><Empty>There is no claim with this number.</Empty></Section>;
   if (!c || !version.data) return <Section><Loading what="the claim" /></Section>;
   const d = det.data ?? null;
@@ -65,7 +65,7 @@ export default function ClaimPage() {
           {STAGES.map((s, i) => (
             <li key={s} className="flex flex-col gap-2">
               <span className={`h-[3px] ${i <= at ? "bg-obsidian" : "bg-[#d9d9d9]"}`} />
-              <span className={`t-label ${i === at ? "text-obsidian" : "text-smoke"}`}>{s}</span>
+              <span className={`t-label !text-[10px] sm:!text-[12px] ${i === at ? "text-obsidian" : "text-smoke"}`}>{s}</span>
             </li>
           ))}
         </ol>
@@ -199,7 +199,14 @@ export default function ClaimPage() {
 
 function DeterminationRow({ did }: { did: string }) {
   const d = useChain(`determination.${did}`, (f) => getDetermination(did, f));
-  if (!d.data) return <p className="t-small border-b border-[#d9d9d9] py-4 text-smoke">Reading {determinationName(did).toLowerCase()}.</p>;
+  if (!d.data) {
+    return (
+      <p className="t-small border-b border-[#d9d9d9] py-4 text-smoke">
+        {d.retrying ? `Studio Next is busy; reading ${determinationName(did).toLowerCase()} again shortly.`
+          : `Reading ${determinationName(did).toLowerCase()}.`}
+      </p>
+    );
+  }
   const x = d.data;
   return (
     <Link href={`/determinations/${did}`}

@@ -46,7 +46,7 @@ export default function Home() {
             <Stat label="Events established" value={stats.data.established} />
             <Stat label="Benefits paid" value={gen(String(stats.data.paid_wei))} />
           </div>
-        ) : stats.error ? <ReadFailure what="the totals" /> : <Loading what="the totals" />}
+        ) : stats.error ? <ReadFailure what="the totals" retrying={stats.retrying} /> : <Loading what="the totals" />}
       </Section>
 
       <Section>
@@ -109,7 +109,7 @@ export default function Home() {
                 ))}
               </ul>
             ) : <Empty>No claim has been filed yet.</Empty>
-          ) : claims.error ? <ReadFailure what="the claims" /> : <Loading what="the latest claims" />}
+          ) : claims.error ? <ReadFailure what="the claims" retrying={claims.retrying} /> : <Loading what="the latest claims" />}
         </div>
       </Section>
 
@@ -124,7 +124,7 @@ export default function Home() {
                 <span className="t-small text-graphite">Pays {gen(t.benefit_wei)} for an established event · bond {gen(t.bond_wei)}</span>
               </Link>
             )) : <Empty>No event type has been written yet.</Empty>
-          ) : types.error ? <ReadFailure what="the event types" /> : <Loading what="the event types" />}
+          ) : types.error ? <ReadFailure what="the event types" retrying={types.retrying} /> : <Loading what="the event types" />}
         </div>
       </Section>
     </>

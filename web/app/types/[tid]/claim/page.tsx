@@ -25,7 +25,7 @@ export default function FileClaim() {
                                account: "", assessor: "" });
   const set = (k: keyof typeof f, v: string) => setF((x) => ({ ...x, [k]: v }));
 
-  if (type.error) return <Section><ReadFailure what="this event type" /></Section>;
+  if (type.error) return <Section><ReadFailure what="this event type" retrying={type.retrying} /></Section>;
   if (type.data === null) return <Section><Empty>There is no event type with this number.</Empty></Section>;
   if (!t || !version.data) return <Section><Loading what="the event type" /></Section>;
   const v = version.data;

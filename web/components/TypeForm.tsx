@@ -230,7 +230,6 @@ export function TypeForm({ base, tid }: { base?: TypeVersion; tid?: string }) {
             Claims already filed keep the version they were filed under. Only new claims bind this one.
           </p>
         )}
-        {typeof built === "string" ? <p className="t-small text-obsidian">{built}</p> : null}
         {versioning ? (
           <Act label="Publish the version" method="publish_version"
                prepare={() => (typeof built === "string" ? built : [tid, built.json])}

@@ -90,10 +90,37 @@ function recordStart(at: number): void {
   }
 }
 
+/*
+ * Studio Next counts every caller behind one IP address together, so another
+ * tab, another app or another person on the same network spends the same 30
+ * calls a minute. When the network answers "rate limited", every read in
+ * every tab of this app waits out a short cooldown instead of adding to it.
+ */
+const COOLDOWN_KEY = "occurra.read-cooldown";
+export const COOLDOWN_MS = 20_000;
+let memoryCooldown = 0;
+
+function cooldownUntil(): number {
+  try {
+    return Math.max(memoryCooldown, Number(window.localStorage.getItem(COOLDOWN_KEY) ?? 0) || 0);
+  } catch {
+    return memoryCooldown;
+  }
+}
+
+function coolDown(): void {
+  memoryCooldown = Date.now() + COOLDOWN_MS;
+  try {
+    window.localStorage.setItem(COOLDOWN_KEY, String(memoryCooldown));
+  } catch {
+    /* memory only */
+  }
+}
+
 function paced<T>(work: () => Promise<T>): Promise<T> {
   const now = Date.now();
   const plan = [...new Set([...recordedStarts(), ...memoryStarts, ...pending])].sort((a, b) => a - b);
-  const at = planStart(plan, now);
+  const at = Math.max(planStart(plan, now), cooldownUntil());
   pending.push(at);
   const begin = () => {
     pending.splice(pending.indexOf(at), 1);
@@ -164,8 +191,9 @@ async function call(functionName: string, args: unknown[], tries = 3): Promise<u
       if (refusal) {
         throw new ReadError(refusal.split("[EXPECTED]").pop()?.trim() || refusal, false);
       }
+      if (isRateLimited(e)) coolDown();
       if (!isTransient(e) || i === tries - 1) break;
-      await new Promise((r) => setTimeout(r, (isRateLimited(e) ? 15_000 : 2_500) * (i + 1)));
+      await new Promise((r) => setTimeout(r, (isRateLimited(e) ? 5_000 : 2_500) * (i + 1)));
     }
   }
   throw new ReadError(
@@ -230,12 +258,23 @@ export function invalidateReads(): void {
   }
 }
 
+const sameRecord = new Map<string, Promise<unknown>>();
+
+/** One request per record at a time: parts of a page asking for the same record share it. */
+function shared<T>(key: string, work: () => Promise<T>): Promise<T> {
+  const running = sameRecord.get(key) as Promise<T> | undefined;
+  if (running) return running;
+  const flight = work().finally(() => sameRecord.delete(key));
+  sameRecord.set(key, flight);
+  return flight;
+}
+
 async function cachedView<T>(key: string, fn: string, args: unknown[], fresh: boolean): Promise<T> {
   if (!fresh) {
     const hit = cached<T>(key);
     if (hit !== undefined) return hit;
   }
-  return remember(key, await view<T>(fn, args));
+  return shared(key, async () => remember(key, await view<T>(fn, args)));
 }
 
 async function forever<T>(key: string, fn: string, args: unknown[]): Promise<T | null> {

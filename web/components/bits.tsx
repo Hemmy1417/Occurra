@@ -146,11 +146,13 @@ export function Loading({ what }: { what: string }) {
   return <p className="t-label text-smoke">Reading {what} from the chain.</p>;
 }
 
-export function ReadFailure({ what, detail }: { what: string; detail?: string }) {
+export function ReadFailure({ what, detail, retrying = false }: { what: string; detail?: string; retrying?: boolean }) {
   return (
     <div className="hair p-6">
-      <p className="t-sub">Could not read {what}</p>
-      {detail ? <p className="t-small mt-2 text-graphite">{detail}</p> : null}
+      <p className="t-sub">{retrying ? `Still reading ${what}` : `Could not read ${what}`}</p>
+      <p className="t-small mt-2 text-graphite">
+        {retrying ? "Studio Next is busy right now. This page asks again on its own; there is nothing to do." : detail}
+      </p>
     </div>
   );
 }

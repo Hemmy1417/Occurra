@@ -41,7 +41,7 @@ export default function Claims() {
             ))}
           </ul>
         ) : <div className="py-6"><Empty>No claim has been filed yet.</Empty></div>
-      ) : claims.error ? <ReadFailure what="the claims" /> : <div className="py-6"><Loading what="the claims" /></div>}
+      ) : claims.error ? <ReadFailure what="the claims" retrying={claims.retrying} /> : <div className="py-6"><Loading what="the claims" /></div>}
     </Section>
   );
 }

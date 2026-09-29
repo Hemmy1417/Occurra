@@ -42,7 +42,7 @@ export default function Types() {
             ))}
           </ul>
         ) : <div className="py-6"><Empty>No event type has been written yet.</Empty></div>
-      ) : types.error ? <ReadFailure what="the event types" /> : <div className="py-6"><Loading what="the event types" /></div>}
+      ) : types.error ? <ReadFailure what="the event types" retrying={types.retrying} /> : <div className="py-6"><Loading what="the event types" /></div>}
     </Section>
   );
 }

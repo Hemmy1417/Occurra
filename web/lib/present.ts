@@ -101,7 +101,7 @@ const EVENT: Record<string, string> = {
 export const chainEvent = (s: string) => label(EVENT, s);
 
 export const settledHow = (s: string) => label({
-  finalized: "Finalized after the appeal window", "appeal left undecided": "Finalized when the appeal went undecided",
+  finalized: "Finalized once no appeal could be filed", "appeal left undecided": "Finalized when the appeal went undecided",
   "appeal brought no new evidence": "Finalized when the appeal brought no new evidence",
 }, s);
 

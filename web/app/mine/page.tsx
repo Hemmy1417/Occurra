@@ -52,7 +52,7 @@ export default function Mine() {
 
       <div className="flex flex-col gap-4">
         <SectionHead title="Claims you filed" />
-        {claims.error ? <ReadFailure what="your claims" /> : !claims.data ? <Loading what="your claims" /> : asClaimant.length ? (
+        {claims.error ? <ReadFailure what="your claims" retrying={claims.retrying} /> : !claims.data ? <Loading what="your claims" /> : asClaimant.length ? (
           <ul>
             {asClaimant.map((c) => (
               <li key={c.claim_id}>
@@ -88,7 +88,7 @@ export default function Mine() {
 
       <div className="flex flex-col gap-4">
         <SectionHead title="Event types you sponsor" />
-        {types.error ? <ReadFailure what="your event types" /> : !types.data ? <Loading what="your event types" /> : types.data.event_types.length ? (
+        {types.error ? <ReadFailure what="your event types" retrying={types.retrying} /> : !types.data ? <Loading what="your event types" /> : types.data.event_types.length ? (
           <ul>
             {types.data.event_types.map((t) => (
               <li key={t.type_id}>
